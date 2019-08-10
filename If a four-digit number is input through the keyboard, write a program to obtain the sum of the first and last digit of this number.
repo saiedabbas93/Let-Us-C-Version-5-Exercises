@@ -20,6 +20,6 @@ void main()
 
     sum=d4+d1;
 
-    printf("The sum of the first and the last  eneterd digits %d is %d",num,sum);
+    printf("The sum of the first and the last  entered digits %d is %d",num,sum);
     
 }
