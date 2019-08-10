@@ -1,0 +1,28 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+    int num,a,b,c,d,e,d5,d4,d3,d2,d1,sum;
+    printf("Enter the 5 digits\n");
+    scanf("%d",&num);
+
+    a=num/10; /*This will divide entered 5 digits by 10 and will save in variable a, the first 4 digits*/ 
+    d5=num%10; /*The last digit will be saved in variable d5*/
+
+    b=a/10;
+    d4=a%10;
+    
+    c=b/10;
+    d3=b%10;
+    
+    d=c/10;
+    d2=c%10;
+    
+    e=d/10;
+    d1=d%10;
+
+    sum=d5+d4+d3+d2+d1;
+
+    printf("The sum of the eneterd digits %d is %d",num,sum);
+    
+}
