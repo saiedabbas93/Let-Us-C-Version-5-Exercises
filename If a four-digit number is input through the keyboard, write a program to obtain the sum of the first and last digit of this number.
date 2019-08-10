@@ -1,0 +1,25 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+    int num,a,b,c,d,d4,d3,d2,d1,sum;
+    printf("Enter the 4 digits\n");
+    scanf("%d",&num);
+
+    a=num/10;
+    d4=num%10;
+
+    b=a/10;
+    d3=a%10;
+    
+    c=b/10;
+    d2=b%10;
+    
+    d=c/10;
+    d1=c%10;
+
+    sum=d4+d1;
+
+    printf("The sum of the first and the last  eneterd digits %d is %d",num,sum);
+    
+}
