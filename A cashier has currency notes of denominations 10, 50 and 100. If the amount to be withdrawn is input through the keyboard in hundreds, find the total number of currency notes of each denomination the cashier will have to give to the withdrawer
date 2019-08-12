@@ -1,0 +1,15 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+    int cash,d10,d50,d100;
+    printf("Enter the amount to be withdrawn in hundreds\n");
+    scanf("%d",&cash);
+
+    d10=cash/10;
+    d50=cash/50;
+    d100=cash/100;
+
+    printf("the total number of currency notes of each denomination the cashier will have to give to the withdrawer\n");
+    printf("Number of 10s cashier will give= %d\nNumber of 50s cashier will give=  %d\nNumber of 100s cashier will give=  %d",d10,d50,d100);
+}
