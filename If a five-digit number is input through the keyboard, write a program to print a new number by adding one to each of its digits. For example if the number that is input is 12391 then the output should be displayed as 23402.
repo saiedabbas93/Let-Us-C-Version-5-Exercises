@@ -1,0 +1,27 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+    int five_digits,a,b,c,d,e,d1,d2,d3,d4,d5;
+
+    printf("Enter the five digits number\n");
+    scanf("%d",&five_digits);
+
+    a=five_digits/10;
+    d5=(five_digits%10+1)%10;
+
+    b=a/10;
+    d4=(a%10+1)%10;
+
+    c=b/10;
+    d3=(b%10+1)%10;
+
+    d=c/10;
+    d2=(c%10+1)%10;
+
+    e=d/10;
+    d1=(d%10+1)%10;
+
+    printf("New number obtained by adding one to each of its entered five %d digits is below\n",five_digits);
+    printf("%d%d%d%d%d",d1,d2,d3,d4,d5);
+}
