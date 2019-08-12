@@ -1,0 +1,16 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+    int discount,tot_quan,price_per_item,tot_price,tot_price_after_discount;
+    printf("Emter the price per item,total quantity and discount if quantity exceeds 1000\n");
+    scanf("%d\n%d\n%d",&price_per_item,&tot_quan,&discount);
+    tot_price=tot_quan*price_per_item;
+    tot_price_after_discount=tot_price*discount/100;
+
+    if(tot_quan >= 1000)
+    printf("Awesome there is a discount of %d percent on your purchase\nThe total price after discount is %d\n",discount,tot_price_after_discount);
+
+    if(tot_quan < 1000)
+    printf("Sorry there is no discount as your quantity is less tham 1000\nThe total expense you have to pay is %d",tot_price);
+}
