@@ -1,0 +1,18 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+    int items,to_sp,to_prof,to_cp,one_cp;
+    printf("Enter the total number of items\n");
+    scanf("%d",&items);
+
+    printf("Total selling price of %d items\n",items);
+    scanf("%d",&to_sp);
+    printf("Total profit earned\n");
+    scanf("%d",&to_prof);
+
+    to_cp=to_sp-to_prof;
+    one_cp=to_cp/items;
+
+    printf("Cost price of %d items is %d\nCost price of 1 item is %d\n",items,to_cp,one_cp);
+}
