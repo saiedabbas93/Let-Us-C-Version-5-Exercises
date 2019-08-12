@@ -12,4 +12,13 @@ void main()
 
     printf("the total number of currency notes of each denomination the cashier will have to give to the withdrawer\n");
     printf("Number of 10s cashier will give= %d\nNumber of 50s cashier will give=  %d\nNumber of 100s cashier will give=  %d",d10,d50,d100);
+    
+    /*Another calculation*/
+    d100=cash/100;
+    d50=(cash%100)/50;
+    d10=((cash%100)%50)/10;
+    d1=(((cash%100)%50)%10)/1;
+    printf("\nAnother calculation\n");
+    printf("Exact currency notes that cashier has to give\n");
+    printf("Number of 1s cashier will give= %d\nNumber of 10s cashier will give= %d\nNumber of 50s cashier will give=  %d\nNumber of 100s cashier will give=  %d",d1,d10,d50,d100);
 }
