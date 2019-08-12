@@ -1,0 +1,33 @@
+#include<conio.h>
+#include<stdio.h>
+void main()
+{
+    float menperc,total_literacyperc,total_literate_menperc,total_population,womenperc,totalmenpop,totalwomenpopu,totallitmen,totallitwomen;
+    float total_illetmenperc,total_illetwomenperc,total_illetmen,total_illetwomen;
+
+    printf("Enter pecentage of men in the town\n");
+    scanf("%f",&menperc);
+
+    printf("Enter pecentage of total literacy in the town\n");
+    scanf("%f",&total_literacyperc);
+
+    printf("Enter pecentage of total literate men in the town\n");
+    scanf("%f",&total_literate_menperc);
+
+    printf("Enter the total town population\n");
+    scanf("%f",&total_population);
+
+    womenperc=100-menperc;
+    totalmenpop=menperc/100*total_population;
+    totalwomenpopu=womenperc/100*total_population;
+
+    total_illetmenperc=menperc-total_literate_menperc;
+    total_illetmen=total_illetmenperc/100*total_population;
+
+    total_illetwomenperc=womenperc-(total_literacyperc-total_literate_menperc);
+    total_illetwomen=total_illetwomenperc/100*total_population;
+
+    printf("The results are \nWomen percent= %f\nTotal men population= %f\nTotal women population= %f\n",womenperc,totalmenpop,totalwomenpopu);
+    printf("Total illiterate men percentage= %f\nTotal illiterate men= %f\nTotal illiterate women percentage= %f\nTotal illiterate women= %f",total_illetmenperc,total_illetmen,total_illetwomenperc,total_illetwomen);
+    
+}
