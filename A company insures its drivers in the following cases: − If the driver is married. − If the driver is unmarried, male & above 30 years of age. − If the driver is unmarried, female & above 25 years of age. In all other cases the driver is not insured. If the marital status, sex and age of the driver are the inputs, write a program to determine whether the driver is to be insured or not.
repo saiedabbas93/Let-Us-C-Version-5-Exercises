@@ -1,0 +1,45 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+    int ms,sex,age;
+    char name[10];
+    printf("Hello! Welcome to the insurance company\nWhat is your good name?\n");
+    scanf("%s",&name);
+    printf("%s, what is your marital status\nPress 1 for married and 2 for unmarried\n",name);
+    scanf("%d",&ms);
+
+    if (ms==1)
+    printf("Congratulation %s, we can process your application for imsurance",name);
+    else
+    {
+        printf("%s, Please press 1 if you are male and press 2 if you are female\n",name);
+        scanf("%d",&sex);
+        printf("%s, How old are you ?\n",name);
+        scanf("%d",&age);
+        
+    
+        if(ms==2 && sex==1 && age>30)
+        printf("Congratulation %s, we can process your application for imsurance",name);
+        else if(ms==2 && sex==2 && age>25)
+        printf("Congratulation %s, we can process your application for imsurance",name);
+        else
+        printf("Unfortunately the requirements are not met %s. Please visit us soon.",name);  
+    }
+    
+    
+}
+
+
+Output:
+Hello! Welcome to the insurance company
+What is your good name?
+Programmer
+Programmer, what is your marital status
+Press 1 for married and 2 for unmarried
+2
+Programmer, Please press 1 if you are male and press 2 if you are female
+2
+Programmer, How old are you ?
+26
+Congratulation Programmer, we can process your application for imsurance
