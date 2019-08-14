@@ -1,0 +1,41 @@
+#include<stdio.h>
+#include<conio.h>
+
+void main()
+{
+    int gender,yos,qualification;
+
+    printf("What is your\nGender\nPress 1 for Male, 2 for female\n");
+    scanf("%d",&gender);
+    printf("Year of Service= \n");
+    scanf("%d",&yos);
+    printf("Qualification\nPress 1 for Graduate, 2 for post-graduate\n");
+    scanf("%d",&qualification);
+
+    if(gender==1 && yos>=10 && qualification==2 )
+    printf("Your salary is 15000");
+
+    else if(gender==1 && yos>=10 && qualification==1)
+    printf("Your salary is 10000");
+
+    else if(gender==1 && yos<10 && qualification==2)
+    printf("Your salary is 10000");
+
+    else if(gender==1 && yos<10 && qualification==1)
+    printf("Your salary is 7000");
+
+    /*Female*/
+
+    if(gender==2 && yos>=10 && qualification==2 )
+    printf("Your salary is 12000");
+
+    else if(gender==2 && yos>=10 && qualification==1)
+    printf("Your salary is 9000");
+
+    else if(gender==2 && yos<10 && qualification==2)
+    printf("Your salary is 10000");
+
+    else if(gender==2 && yos<10 && qualification==1)
+    printf("Your salary is 6000");
+
+}
