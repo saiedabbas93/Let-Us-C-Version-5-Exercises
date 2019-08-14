@@ -1,0 +1,32 @@
+/*Bonus to be given or not depending on experience*/
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+    int cy,yoj,experience;
+    char name[10];
+    printf("\tWelcome to MY COMPANY INC\n\nEnter your employee name\n");
+    scanf("%s",&name);
+    printf("%s, Which year did you join our company? \n",name);
+    scanf("%d",&yoj);
+    printf("What is the current year?\n");
+    scanf("%d",&cy);
+
+    experience=cy-yoj;
+
+    if(experience > 3)
+    printf("For serving our comppany for %d years, a bonus of Rs.2500 will be given.");
+}
+
+
+
+Output:
+ Welcome to MY COMPANY INC
+
+Enter your employee name
+FRED
+FRED, Which year did you join our company?
+2015
+What is the current year?
+2019
+For serving our comppany for 4 years, a bonus of Rs.2500 will be given.
