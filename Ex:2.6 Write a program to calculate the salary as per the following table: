@@ -39,3 +39,28 @@ void main()
     printf("Your salary is 6000");
 
 }
+
+
+Output:
+What is your
+Gender
+Press 1 for Male, 2 for female
+1
+Year of Service=
+100
+Qualification
+Press 1 for Graduate, 2 for post-graduate
+1
+Your salary is 10000
+PS C:\Program code> cd "c:\Program code\" ; if ($?) { gcc simple_random.c -o simple_random } ; if ($?) { .\simple_random }
+What is your
+Gender
+Press 1 for Male, 2 for female
+1
+Year of Service=
+2
+Qualification
+Press 1 for Graduate, 2 for post-graduate
+1
+Your salary is 7000
+
