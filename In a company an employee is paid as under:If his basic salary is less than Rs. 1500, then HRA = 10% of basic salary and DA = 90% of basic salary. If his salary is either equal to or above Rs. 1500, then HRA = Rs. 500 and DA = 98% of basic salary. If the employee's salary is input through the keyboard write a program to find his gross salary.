@@ -1,0 +1,31 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+    float bs,hra,gs,da;
+    printf("Enter your basic salary\n");
+    scanf("%f",&bs);
+
+    if (bs<1500)
+    {
+        hra=bs*10/100;
+        da=bs*90/100;
+    }
+
+    else
+    {
+        hra=500;
+        da=bs*98/100;
+    }
+    
+    gs=hra+bs+da;
+    printf("BS= %f\nHRA= %f\nDA= %f\nGS= %f",bs,hra,da,gs);
+}
+
+OUTPUT:
+Enter your basic salary
+1501
+BS= 1501.000000
+HRA= 500.000000
+DA= 1470.979980
+GS= 3471.979980
