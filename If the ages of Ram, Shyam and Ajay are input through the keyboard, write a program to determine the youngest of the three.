@@ -1,0 +1,39 @@
+#include<conio.h>
+#include<stdio.h>
+void main()
+{
+    int ram,shyam,ajay;
+    printf("Enter Ram's age: \n");
+    scanf("%d",&ram);
+    printf("Enter Shyan's age: \n");
+    scanf("%d",&shyam);
+    printf("Enter Ajay's age: \n");
+    scanf("%d",&ajay);
+
+    if(ram<shyam && ram<ajay)
+        printf("Ram is youngest");
+    else if(shyam<ram && shyam<ajay)
+        printf("Shyam is youngest");
+    else if(ajay<shyam && ajay<ram)
+        printf("Ajay is youngest");
+    else if(ram==ajay&&ram==shyam)
+        printf("All three same age");
+    
+}
+
+Output
+Enter Ram's age:
+10
+Enter Shyan's age:
+10
+Enter Ajay's age:
+10
+All three same age
+PS G:\C new programs> cd "g:\C new programs\" ; if ($?) { gcc tempCodeRunnerFile.c -o tempCodeRunnerFile } ; if ($?) { .\tempCodeRunnerFile }
+Enter Ram's age:
+10
+Enter Shyan's age:
+50
+Enter Ajay's age:
+30
+Ram is youngest
