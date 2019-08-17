@@ -1,0 +1,22 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+    int num;
+    printf("Enter the number= ");
+    scanf("%d",&num);
+
+    if (num<0)
+    {
+    num=-num;
+    printf("Absolute value is %d",num);
+    }
+    else
+    printf("Absolute value is %d",num);
+    
+}
+
+
+Output:
+Enter the number= -32
+Absolute value is 32
