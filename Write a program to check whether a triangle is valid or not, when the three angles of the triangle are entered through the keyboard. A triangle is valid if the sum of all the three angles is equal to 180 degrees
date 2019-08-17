@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+    int ab,bc,ca,sum;
+    printf("First angle= ");
+    scanf("%d",&ab);
+    printf("Second angle= ");
+    scanf("%d",&bc);
+    printf("Third angle= ");
+    scanf("%d",&ca);
+
+    sum=ab+bc+ca;
+
+    if (sum==180)
+    printf("Valid triangle as sum is %d",sum);
+    else
+    printf("Not a Valid trianglea s sum is %d",sum);
+}
+
+
+OUTPUT:
+First angle= 60
+Second angle= 70
+Third angle= 50
+Valid triangle as sum is 180
