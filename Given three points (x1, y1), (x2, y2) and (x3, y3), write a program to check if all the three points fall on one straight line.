@@ -1,0 +1,33 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+    float x1,y1,x2,y2,x3,y3,slope1,slope2;
+    printf("(x1,y1)=\n");
+    scanf("%f%f",&x1,&y1);
+    printf("(x2,y2)=\n");
+    scanf("%f%f",&x2,&y2);
+    printf("(x3,y3)=\n");
+    scanf("%f%f",&x3,&y3);
+
+    slope1=(y2-y1) / (x2-x1);
+    slope2=(y3-y2) / (x3-x2);
+
+    if(slope1==slope2)
+    printf("All three points fall on a straight line");
+    else
+    printf("All three points do not fall on a straight line");
+    
+}
+
+output:
+(x1,y1)=
+1
+2
+(x2,y2)=
+1
+5
+(x3,y3)=
+1
+6
+All three points fall on a straight line
