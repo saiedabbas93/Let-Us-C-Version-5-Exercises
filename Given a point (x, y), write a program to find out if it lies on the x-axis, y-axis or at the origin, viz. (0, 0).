@@ -1,0 +1,38 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+    int x,y;
+    printf("Enter the coordinates (x,y)= \n");
+    scanf("%d%d",&x,&y);
+
+    if (x==0 && y==0)
+    printf("Point is at the origin");
+
+    else if(x==0 && y!=0)
+    printf("Point is on the Y-axis");
+
+    else if(x!=0 && y==0)
+    printf("Point is on the X-axis");
+
+    else
+    printf("Point is on one of the co-ordinates");
+}
+
+
+
+Output:
+Enter the coordinates (x,y)=
+5
+0
+Point is on the X-axis
+PS C:\Program code> cd "c:\Program code\" ; if ($?) { gcc tempCodeRunnerFile.c -o tempCodeRunnerFile } ; if ($?) { .\tempCodeRunnerFile }
+Enter the coordinates (x,y)=
+0
+5
+Point is on the Y-axis
+PS C:\Program code> cd "c:\Program code\" ; if ($?) { gcc tempCodeRunnerFile.c -o tempCodeRunnerFile } ; if ($?) { .\tempCodeRunnerFile }
+Enter the coordinates (x,y)=
+5
+5
+Point is on one of the co-ordinates
