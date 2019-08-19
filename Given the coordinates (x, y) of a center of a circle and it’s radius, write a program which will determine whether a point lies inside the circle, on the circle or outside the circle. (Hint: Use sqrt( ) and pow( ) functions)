@@ -1,0 +1,36 @@
+#include<conio.h>
+#include<stdio.h>
+#include<math.h>
+void main()
+{
+    int a,b,x,y,r,result;
+
+    printf("Enter the coordinates of the center of a circle (a,b)= \n");
+    scanf("%d%d",&a,&b);
+    printf("Enter the coordinates of a point whose position is to determined (x,y)= \n");
+    scanf("%d%d",&x,&y);
+    printf("Enter the radius of a circle\n");
+    scanf("%d",&r);
+
+    result=sqrt ( (pow((x-a),2)) + (pow((x+a),2)) );
+
+    if(result==r)
+    printf("Point (%d,%d) on the circle",x,y);
+    else if(result<r)
+    printf("Point (%d,%d) inside circle",x,y);
+    else if(result>r)
+    printf("Point (%d,%d) outside circle",x,y);
+
+}
+
+
+Output:
+Enter the coordinates of the center of a circle (a,b)=
+0
+0
+Enter the coordinates of a point whose position is to determined (x,y)=
+5
+6
+Enter the radius of a circle
+6
+Point (5,6) outside circle
