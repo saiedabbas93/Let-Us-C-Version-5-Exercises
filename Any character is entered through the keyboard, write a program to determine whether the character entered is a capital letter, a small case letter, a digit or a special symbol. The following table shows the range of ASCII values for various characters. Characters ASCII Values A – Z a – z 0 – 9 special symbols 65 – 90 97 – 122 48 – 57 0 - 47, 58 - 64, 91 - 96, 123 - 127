@@ -1,0 +1,39 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+    char character;
+    printf("Enter the character \n");
+    scanf("%c",&character);
+
+    if(character>=65 && character<=90)
+    printf("Capital letter enetered\n");
+
+    else if(character>=97 && character<=122)
+    printf("Small letter enetered\n");
+
+    else if(character>=48 && character<=57)
+    printf("Digit enetered\n");
+
+    else if((character>=0 && character<=47) || (character>=58 && character<=64) || (character>=91 && character<=96) || (character>=123 && character<=127))
+    printf("Special symbol enetered\n");
+
+}
+
+Output:
+
+Enter the character
+A
+Capital letter enetered
+PS C:\Program code> cd "c:\Program code\" ; if ($?) { gcc tempCodeRunnerFile.c -o tempCodeRunnerFile } ; if ($?) { .\tempCodeRunnerFile }
+Enter the character
+z
+Small letter enetered
+PS C:\Program code> cd "c:\Program code\" ; if ($?) { gcc tempCodeRunnerFile.c -o tempCodeRunnerFile } ; if ($?) { .\tempCodeRunnerFile }
+Enter the character
+9
+Digit enetered
+PS C:\Program code> cd "c:\Program code\" ; if ($?) { gcc ascii_to_find_capital_letters.c -o ascii_to_find_capital_letters } ; if ($?) { .\ascii_to_find_capital_letters }
+Enter the character
+$
+Special symbol enetered
