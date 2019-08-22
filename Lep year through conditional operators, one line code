@@ -1,0 +1,24 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+    int year;
+    printf("Year please?\n");
+    scanf("%d",&year);
+
+    year%4==0 && year%100!=0 ? printf("Leap year") : (year%400==0 ? printf("Leap year 400") : printf("Not a leap year"));
+}
+
+
+Output:
+Year please?
+2004
+Leap year
+PS C:\Program code> cd "c:\Program code\" ; if ($?) { gcc dummy.c -o dummy } ; if ($?) { .\dummy }
+Year please?
+2000
+Leap year 400
+PS C:\Program code> cd "c:\Program code\" ; if ($?) { gcc dummy.c -o dummy } ; if ($?) { .\dummy }
+Year please?
+1240
+Leap year
