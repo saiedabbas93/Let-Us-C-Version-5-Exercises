@@ -1,0 +1,27 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+    int character;
+    printf("Enter the character\n");
+    scanf("%c",&character);
+
+    character>=65 && character<=90  ? printf("Capital letter") : (character>=97 && character<=122 ? printf("Small letter") : (character>=48 && character<=57 ? printf("Digit"): ((character>=0 && character <=47) || (character>=58 && character <=64)|| (character>=91 && character <=96) || (character>=123 && character <=127) ? printf("Special symbols") : 0 )));
+}
+
+Output:
+Enter the character
+5
+Digit
+PS C:\Program code> cd "c:\Program code\" ; if ($?) { gcc dummy.c -o dummy } ; if ($?) { .\dummy }
+Enter the character
+.
+Special symbols
+PS C:\Program code> cd "c:\Program code\" ; if ($?) { gcc dummy.c -o dummy } ; if ($?) { .\dummy }
+Enter the character
+A
+Capital letter
+PS C:\Program code> cd "c:\Program code\" ; if ($?) { gcc dummy.c -o dummy } ; if ($?) { .\dummy }
+Enter the character
+a
+Small letter
