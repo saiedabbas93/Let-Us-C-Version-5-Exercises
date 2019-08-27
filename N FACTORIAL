@@ -1,0 +1,18 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+    int n,fact;
+    printf("Enter the number whose factorial is to be found  ");
+    scanf("%d",&n);
+
+    for(fact=1;n>0;n--)
+    {
+        fact=fact*n;
+    }
+    printf("%d\n",fact);
+
+    }
+OUTPUT:
+Enter the number whose factorial is to be found  5
+120
