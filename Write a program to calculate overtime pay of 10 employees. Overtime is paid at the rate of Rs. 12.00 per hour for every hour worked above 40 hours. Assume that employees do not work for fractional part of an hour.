@@ -1,0 +1,38 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+    int employee,hours,rate=12,i=0,extra_hours,extra_pay;
+    printf("Enter the number of employees  ");
+    scanf("%d",&employee);
+    
+
+    while(i++<=employee-1)
+    {
+        printf("Enter the hours worked by employee %d  ",i);
+        scanf("%d",&hours);
+        if (hours>40)
+           {
+        
+            extra_hours=hours - 40;
+            extra_pay=extra_hours*12;
+            printf("The extra pay of the employee %d is %d\n",i,extra_pay);
+            continue;
+            }
+         else
+            {
+            printf("Hours worked less than 40 hours\n");
+            continue;
+            }
+    }
+    
+}
+
+OUTPUT:
+Enter the number of employees  3
+Enter the hours worked by employee 1  65
+The extra pay of the employee 1 is Rs. 300
+Enter the hours worked by employee 2  39
+Hours worked less than 40 hours,so no overtime paid
+Enter the hours worked by employee 3  46
+The extra pay of the employee 3 is Rs. 72
