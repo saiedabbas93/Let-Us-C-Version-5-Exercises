@@ -1,0 +1,31 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+    int i=1,result,d1,d2,d3,a,b,c;
+    while(i<=500)
+    {
+        a=i/10;
+        d1=i%10;
+
+        b=a/10;
+        d2=a%10;
+
+        c=b/10;
+        d3=b%10;
+
+        result=(d1*d1*d1) + (d2*d2*d2) + (d3*d3*d3);
+        if(result==i)
+        {
+            printf("Armstrong number %d\n",i);
+        } 
+        i++;
+    }
+}
+
+Output:
+Armstrong number 1
+Armstrong number 153
+Armstrong number 370
+Armstrong number 371
+Armstrong number 407
