@@ -1,0 +1,16 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+    int matchsticks=21,user,computer,total=0,remain;
+    while(remain>=1)
+    {
+        printf("Enter the user matchsticks ");
+        scanf("%d",&user);
+        printf("Enter the computer matchsticks ");
+        scanf("%d",&computer);
+
+        total=user+computer+total;
+        remain=matchsticks-total;
+    }
+}
