@@ -2,15 +2,54 @@
 #include<conio.h>
 void main()
 {
-    int matchsticks=21,user,computer,total=0,remain;
-    while(remain>=1)
+    int matchsticks=21,user,computer,total=0,remain=1,i=0;
+    while(remain>0)
     {
+        while(++i>=i) /*User will pick the matchsticks not greater than 4*/
+        {
         printf("Enter the user matchsticks ");
         scanf("%d",&user);
+        if(user>4)
+        {
+        printf("You cannot take more than 4 match sticks\n");
+        i++;
+        continue;
+        }
+        else
+        break;
+        }
+
+        
+
+        while(++i>=i) /*Computer will pick the matchsticks not greater than 4*/
+        {
         printf("Enter the computer matchsticks ");
         scanf("%d",&computer);
+        if(computer>4)
+        {
+        printf("You cannot take more than 4 match sticks\n");
+        i++;
+        continue;
+        }
+        else
+        break;
+        }
 
-        total=user+computer+total;
-        remain=matchsticks-total;
+        total=user+computer+total; /*Total match sticks picked*/
+        remain=matchsticks-total; /*Remaining match sticks that can be picked*/ 
+
+        if(user<=remain || computer<=remain  || remain==0)
+        {
+        printf("The remaining sticks are  %d  and totally  %d  sticks taken\n\n",remain,total);
+        }
+        else if (user>=remain || computer>=remain )
+        {
+         printf("Previous remain= %d\t",remain);
+         remain=21-(total-user-computer);
+         total=total-user-computer;
+         printf("There are only %d remaining sticks, please enetr again\n\n",remain);
+         continue;
+        }
+    
     }
 }
