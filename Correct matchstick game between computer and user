@@ -1,0 +1,50 @@
+#include<stdio.h>
+void main()
+{
+    int i=1,user,computer=0,total=0,remain=0,matchsticks=21;
+    while(i>0)
+    {
+        printf("User input ");
+        scanf("%d",&user);
+        total=user+total;
+        remain=21-total;
+        printf("Total= %d  Remain= %d\n",total,remain);
+        
+
+        computer=5-user;
+        total=computer+total;
+        remain=21-total;
+        printf("Computer choose %d \n",computer);
+        printf("Total= %d  Remain= %d\n\n",total,remain);
+
+        if(remain==1)
+        {
+            printf("User lost because the remaining matchsticks were %d and computer choose %d",computer);
+            break;
+        }
+         i++;
+    }
+}
+
+OUTPUT:
+User input 3
+Total out= 3  Remaining matchsticks= 18
+Computer choose 2
+Total out= 5  Remaining matchsticks= 16
+
+User input 4
+Total out= 9  Remaining matchsticks= 12
+Computer choose 1
+Total out= 10  Remaining matchsticks= 11
+
+User input 4
+Total out= 14  Remaining matchsticks= 7
+Computer choose 1
+Total out= 15  Remaining matchsticks= 6
+
+User input 4
+Total out= 19  Remaining matchsticks= 2
+Computer choose 1
+Total out= 20  Remaining matchsticks= 1
+
+User lost as only 1 matchstick is remaining and computer choose 1
