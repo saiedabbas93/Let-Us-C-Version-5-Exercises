@@ -1,0 +1,47 @@
+#include<stdio.h>
+void main()
+{
+    int i=1,user1,user2=0,total=0,remain=0,matchsticks=21;
+    while(i>0)
+    {
+        printf("User1 input ");
+        scanf("%d",&user1);
+        total=user1+total;
+        remain=21-total;
+        printf("Total= %d  Remain= %d\n",total,remain);
+        if(remain<=0)
+        {
+            printf("User1 lost");
+            break;
+        }
+        printf("user2 input ");
+        scanf("%d",&user2);
+        total=user2+total;
+        remain=21-total;
+        printf("Total= %d  Remain= %d\n\n",total,remain);
+        if(remain<=0)
+        {
+            printf("User 2 lost");
+            break;
+        }
+    }
+    i++;
+}
+
+Output:
+User1 input 4
+Total= 4  Remain= 17
+user2 input 4
+Total= 8  Remain= 13
+
+User1 input 4
+Total= 12  Remain= 9
+user2 input 4
+Total= 16  Remain= 5
+
+User1 input 4
+Total= 20  Remain= 1
+user2 input 4
+Total= 24  Remain= -3
+
+User 2 lost
