@@ -1,0 +1,43 @@
+#include<stdio.h>
+void main()
+{
+    int a,b,i,j,positive=0,negative=0,zero=0;
+    printf("a= ");
+    scanf("%d",&a);
+    printf("b= ");
+    scanf("%d",&b);
+
+    for(i=a;i<=b;i++)
+    {
+    if(i<0)
+    positive++;
+
+    else if(i>0)
+    negative++;
+
+    else
+    zero++;
+
+    printf("%d\n",i);
+   
+    }
+     printf("Total positive %d\n",positive);
+     printf("Total Negative %d\n",negative);
+     printf("    Total Zero %d\n",zero);
+}
+
+Output:
+a= -5
+b= 3
+-5
+-4
+-3
+-2
+-1
+0
+1
+2
+3
+Total positive 5
+Total Negative 3
+    Total Zero 1
