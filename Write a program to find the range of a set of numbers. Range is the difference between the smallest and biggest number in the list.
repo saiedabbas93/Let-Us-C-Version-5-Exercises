@@ -1,0 +1,40 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+    int n,i=0,num,small=0,large=0,range;
+    printf("How many numbers you wanna enter  ");
+    scanf("%d",&n);
+    printf("Enter the %d numbers\n",n);
+    while(i==0)
+    {
+        scanf("%d",&num);
+        small=num;
+        large=num;
+        while(i<n-1)
+        {
+            scanf("%d",&num);
+            if(num<=small && num<large)
+            small=num;
+
+            else if(num>=large)
+            large=num;
+
+            i++;
+
+        }
+    }
+
+    range=large-small;
+    printf("Large= %d  small= %d  range= %d  ",large,small,range);
+}
+
+output:
+How many numbers you wanna enter  5
+Enter the 5 numbers
+0
+2
+0
+3
+0
+Large= 3  small= 0  range= 3
