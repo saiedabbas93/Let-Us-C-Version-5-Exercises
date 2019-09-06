@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include<conio.h>
+
+void main()
+{
+   int i,num,result;
+   for(num=1;num<=50;num++)
+   {
+       for(i=2;i<num;i++)
+       {
+           result=num%i;
+
+           if (result==0)
+           break;
+
+       }
+       
+       while(i==num)
+       {
+           printf("%d is a prime number\n",num);
+           break;
+       }
+       continue;
+    }
+}
+
+Output:
+Prime numbers
+        2
+        3
+        5
+        7
+        11
+        13
+        17
+        19
+        23
+        29
+        31
+        37
+        41
+        43
+        47
