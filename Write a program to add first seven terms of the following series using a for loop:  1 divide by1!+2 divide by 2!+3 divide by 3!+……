@@ -1,0 +1,31 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+    int i,num,fact=1;
+    float series=0,result;
+    
+    for(num=1;num<=7;num++)
+    {
+
+    for(i=num,fact=1;i>0;i--)
+    {
+        fact=fact*i;
+        
+    }
+    result=num/fact;
+    series=result+series;
+    printf("Fact of %d = %d Result= %f series= %f\n",num,fact,result,series);
+    }
+}
+
+
+Output:
+PS C:\Users\asaied> cd "c:\Program code\" ; if ($?) { gcc smilingface.c -o smilingface } ; if ($?) { .\smilingface }
+Fact of 1.000000 = 1.000000 Result= 1.000000 series= 1.000000
+Fact of 2.000000 = 2.000000 Result= 1.000000 series= 2.000000
+Fact of 3.000000 = 6.000000 Result= 0.500000 series= 2.500000
+Fact of 4.000000 = 24.000000 Result= 0.166667 series= 2.666667
+Fact of 5.000000 = 120.000000 Result= 0.041667 series= 2.708333
+Fact of 6.000000 = 720.000000 Result= 0.008333 series= 2.716667
+Fact of 7.000000 = 5040.000000 Result= 0.001389 series= 2.718056
