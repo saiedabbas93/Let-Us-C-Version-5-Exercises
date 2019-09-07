@@ -1,0 +1,131 @@
+#include<conio.h>
+#include<stdio.h>
+void main()
+{
+    int letter;
+    for(letter=65;letter<=71;letter++) /*first line*/
+    {
+        printf("%c  ",letter);
+        if(letter==71)
+        {
+            for(letter=70;letter>=65;letter--)
+            {
+            printf("%c  ",letter);
+            }
+            break;
+
+        }
+    }          
+    printf("\n");  /*second line*/
+
+    for(letter=65;letter<=70;letter++)
+    {
+        
+        printf("%c  ",letter);
+        if (letter==70)
+        {
+        printf("   ");
+        for(letter=70;letter>=65;letter--)
+        {
+            printf("%c  ",letter);
+        }
+        break;
+        }
+    }
+
+    printf("\n");  /*third line*/
+
+    for(letter=65;letter<=69;letter++)
+    {
+        
+        printf("%c  ",letter);
+        if (letter==69)
+        {
+        printf("         ");
+        for(letter=69;letter>=65;letter--)
+        {
+            printf("%c  ",letter);
+        }
+        break;
+        }
+    }
+
+    printf("\n");  /*Fourth line*/
+
+    for(letter=65;letter<=68;letter++)
+    {
+        
+        printf("%c  ",letter);
+        if (letter==68)
+        {
+        printf("               ");
+        for(letter=68;letter>=65;letter--)
+        {
+            printf("%c  ",letter);
+        }
+        break;
+        }
+    }
+
+    printf("\n");  /*Fifth line*/
+
+    for(letter=65;letter<=67;letter++)
+    {
+        
+        printf("%c  ",letter);
+        if (letter==67)
+        {
+        printf("                     ");
+        for(letter=67;letter>=65;letter--)
+        {
+            printf("%c  ",letter);
+        }
+        break;
+        }
+    }
+    
+    printf("\n");  /*Sixth line*/
+
+    for(letter=65;letter<=66;letter++)
+    {
+        
+        printf("%c  ",letter);
+        if (letter==66)
+        {
+        printf("                           ");
+        for(letter=66;letter>=65;letter--)
+        {
+            printf("%c  ",letter);
+        }
+        break;
+        }
+    }
+
+    printf("\n");  /*Seventh line*/
+
+    for(letter=65;letter<=65;letter++)
+    {
+        
+        printf("%c  ",letter);
+        if (letter==65)
+        {
+        printf("                                 ");
+        for(letter=65;letter>=65;letter--)
+        {
+            printf("%c  ",letter);
+        }
+        break;
+        }
+    }
+}
+
+
+
+output:
+A  B  C  D  E  F  G  F  E  D  C  B  A
+A  B  C  D  E  F     F  E  D  C  B  A
+A  B  C  D  E           E  D  C  B  A
+A  B  C  D                 D  C  B  A
+A  B  C                       C  B  A
+A  B                             B  A
+A                                   A
