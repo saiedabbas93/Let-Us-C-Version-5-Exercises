@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include<conio.h>
+
+void main()
+{
+   int i,space,j,k,sum;
+
+   for(i=1;i<=4;i++)
+   {
+
+       for(k=i;k<13;k++)
+       {
+           printf("  ");
+       }
+      
+       for(j=1;j<=i;j++)
+       {
+           sum=sum+1;
+           printf("%d   ",sum);
+          
+       }
+       printf("\n");
+    }
+}
+
+Output:
+
+                        1
+                      2   3
+                    4   5   6
+                  7   8   9   10
