@@ -1,0 +1,77 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+    int option,result=1,n,i;;
+    while(1)
+    {
+    printf("\n\n\nEnter the following number to obtain the corresponding result\n1. factorial of a number\n");
+    printf("2. Prime or not\n3. Odd or even\n4. Exit\nYour choice is ");
+    scanf("%d",&option);
+    switch(option)
+    {
+        case 1:
+        
+        printf("Enter the number whose factorial is to be found  ");
+        scanf("%d",&n);
+        for(i=1;i<=n;i++)
+        {
+            result=result * i;
+        }
+        printf("factorial of number %d is %d",n,result);
+        break;
+
+        case 2:
+        printf("Enter the number to find out prime or not ");
+        scanf("%d",&n);
+        for (i=2;i<n;i++)
+        {
+            result=n%i;
+            if(result==0)
+            {
+            printf("%d is not a prime",n);
+            break;
+            }
+        }
+        if (i==n)
+        printf("%d is a prime number",n);
+        break;
+
+        case 3:
+        printf("Enter the number to find out odd or even ");
+        scanf("%d",&n);
+        result=n%2;
+        if(result==0)
+        printf("%d is an even number",n);
+        else
+        printf("%d is an odd number",n);
+        break;
+
+        case 4:
+        goto out;
+
+    }
+    }
+    out:
+    printf("Thank you for using my Math menu");
+}
+
+
+Output:
+Enter the following number to obtain the corresponding result
+1. factorial of a number
+2. Prime or not
+3. Odd or even
+4. Exit
+Your choice is 3
+Enter the number to find out odd or even 33
+33 is an odd number
+
+
+Enter the following number to obtain the corresponding result
+1. factorial of a number
+2. Prime or not
+3. Odd or even
+4. Exit
+Your choice is 4
+Thank you for using my Math menu
