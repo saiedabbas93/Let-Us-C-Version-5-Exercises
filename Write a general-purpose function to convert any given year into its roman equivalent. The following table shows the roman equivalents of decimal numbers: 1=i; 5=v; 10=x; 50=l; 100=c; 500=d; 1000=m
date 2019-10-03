@@ -1,0 +1,56 @@
+include<stdio.h>
+#include<conio.h>
+int main()
+{
+    int roman(int);
+    int num;
+    printf("Enter the number\n");
+    scanf("%d",&num);
+    printf("Roman equivalent of %d is ",num);
+   roman(num);
+}
+int roman(int num)
+{
+    int a,b,c,d,e,f,g,d1,d2,d3,d4,d5,d6,d7,i;
+
+    a=num/1000;
+    d1=num%1000;
+    for(i=1;i<=a;i++)
+    printf("m"); 
+
+    b=d1/500;
+    d2=d1%500;
+    for(i=1;i<=b;i++)
+    printf("d"); 
+
+     c=d2/100;
+    d3=d2%100;
+    for(i=1;i<=c;i++)
+    printf("c"); 
+
+    d=d3/50;
+    d4=d3%50;
+    for(i=1;i<=d;i++)
+    printf("l"); 
+
+    e=d4/10;
+    d5=d4%10;
+    for(i=1;i<=e;i++)
+    printf("x"); 
+
+    f=d5/5;
+    d6=d5%5;
+    for(i=1;i<=f;i++)
+    printf("v"); 
+
+    g=d6/1;
+    d7=d6%1;
+    for(i=1;i<=g;i++)
+    printf("i"); 
+}
+
+
+OUTPUT:
+Enter the number
+1988
+Roman equivalent of 1988 is mdcccclxxxviii
