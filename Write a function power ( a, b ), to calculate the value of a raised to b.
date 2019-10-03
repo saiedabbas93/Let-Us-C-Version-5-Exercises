@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+    int power(int,int);
+    int a,b,pow;
+    printf("Enter the two number a and b\n");
+    scanf("%d\n%d",&a,&b);
+    pow=power(a,b);
+    printf("%d power %d is %d",a,b,pow);
+}
+int power(int a,int b)
+{
+    int i,power=1;
+    for(i=1;i<=b;i++)
+    {
+        power=power*a;
+    }
+    return(power);
+}
+
+OUTPUT:
+Enter the two number a and b
+2
+10
+2 power 10 is 1024
