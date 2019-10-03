@@ -1,0 +1,31 @@
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+    int leap(int);
+    int year,b;
+    printf("Enter the year\n");
+    scanf("%d",&year);
+    b=leap(year);
+    if(b==1)
+     printf("Leap year");
+     else if (b==2)
+     printf("Not a leap year");
+
+}
+int leap(int year)
+{
+    if ((year%4==0 && year%100!=0) || (year%100==0 && year%400==0) )
+    return(1);
+    else
+    return(2);
+    
+}
+
+OUTPUT:
+Enter the year
+2000
+Leap year
+Enter the year
+2001
+Not a leap year
