@@ -1,0 +1,24 @@
+#include<conio.h>
+#include<stdio.h>
+void report(int,int,int,float *,float *);
+ void main()
+ 
+{
+    
+    int sub1=50,sub2=30,sub3=90;
+    float avg,perc;
+    report(sub1,sub2,sub3,&avg,&perc);
+    printf("Average = %f  Percentage = %f ",avg,perc);
+    
+}
+void report(int a,int b,int c, float *average, float *percentage)
+{
+    float sum;
+    sum=a+b+c;
+    *average=sum/3;
+    *percentage=*average/3;
+}
+
+
+OUTPUT:
+Average = 56.666668  Percentage = 18.888889
