@@ -1,0 +1,17 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+    int calc(int,int,int,int,int,int *,int *);
+    int a=5,b=4,c=3,d=2,e=1,sum,average;
+    calc(a,b,c,d,e,&sum,&average);
+    printf("Sum= %d  Average= %d ",sum,average);
+}
+int calc(int a,int b,int c,int d,int e,int *sum,int *average)
+{
+    *sum=a+b+c+d+e;
+    *average=*sum/5;
+}
+
+Output:
+Sum= 15  Average= 3
