@@ -1,0 +1,39 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+    int for_fibo(int,int,int);
+    int fibo(int,int,int);
+    int i=0,j=1,k=0;
+    printf("0 1 ");
+    for_fibo(i,j,k);
+    fibo(i,j,k);
+}
+int for_fibo(int i,int j,int k)  /*Non- Recursive function*/
+{
+    int sum;
+    for(k=0;k<=25;k++)
+    {
+        sum=i+j;
+        printf("%d ",sum);
+        i=j;
+        j=sum;
+    }
+    printf("\nRecursive follows\n0 1 ");
+
+}
+
+int fibo(int i,int j,int k) /*Recursive function*/
+{
+    int sum;
+    sum=i+j;
+    printf("%d ",sum);
+    i=j;
+    j=sum;
+    k=k+1;
+    if(k<=25)
+    fibo(i,j,k);
+}
+
+
+Output:
