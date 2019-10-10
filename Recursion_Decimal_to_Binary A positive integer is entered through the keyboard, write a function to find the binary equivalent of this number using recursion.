@@ -1,0 +1,50 @@
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+void  main()
+{
+    int non_recursive_binary(int);
+    int recursive_binary(int,int,int);
+    int num,binary=0,i=-1,a;
+    printf("Enter the decimal number : ");
+    scanf("%d",&num);
+    binary=non_recursive_binary(num);
+    printf("Non recursive answer is \n%d\n",binary);
+    binary=0;
+    a=recursive_binary(num,i,binary);
+    printf("Recursive answer is \n%d\n",a);
+}
+
+int non_recursive_binary(int num)
+{
+    int binary=0,i=-1,r=0;
+    while(1)
+    {
+        r=num%2;
+        num=num/2;
+        i++;
+        binary=(r*pow(10,i)) + binary;
+        if (num==0)
+        break;
+    }
+    return (binary);
+}
+
+int recursive_binary(int num,int i,int binary)
+{
+    int r=0;
+    r=num%2;
+    num=num/2;
+    i++;
+    binary=(r*pow(10,i)) + binary;
+    if (num==0)
+    return(binary);
+    if (num!=0)
+   recursive_binary(num,i,binary);
+} 
+OUTPUT:
+Enter the decimal number : 30
+Non recursive answer is
+11110
+Recursive answer is
+11110
