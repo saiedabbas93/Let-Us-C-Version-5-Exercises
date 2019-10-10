@@ -1,0 +1,22 @@
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+int sum(int,int,int);
+int num=25,total,s=0,i=1;
+total=sum(num,s,i);
+printf("%d",total);
+}
+
+int sum(int num,int s,int i)
+{
+    s=s+i;
+    i++;
+    if(i>num)
+    return(s);
+    else
+    sum(num,s,i);
+}
+
+OUTPUT:
+325
