@@ -1,0 +1,22 @@
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+float main()
+{
+    float s(float,float,float);
+    float S,value,area,a=2,b=2,c=2;
+    S=s(a,b,c);
+    printf("S= %f\n",S);
+    value= S * (S-a) * (S-b) * (S-c);
+    printf("Value= %f\n",value);
+    area=sqrt(value);
+    printf("Area= %f\n",area);
+}
+float s(float a,float b,float c)
+{
+    return((a+b+c)/2);
+}
+OUTPUT:
+S= 3.000000
+Value= 3.000000
+Area= 1.732051
