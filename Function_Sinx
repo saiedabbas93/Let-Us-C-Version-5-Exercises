@@ -10,37 +10,39 @@ float main()
     scanf("%f",&x);
     for(j=1;j<=11;j=j+4)
     {
-    valuepower=power(x,j);
-    printf("j= %f  Value power= %f\n",j,valuepower);
-    valuefact=fact(x,j);
-    printf("j= %f  Value fact= %f\n",j,valuefact);
-    sine=valuepower/valuefact;
-    printf("j= %f  Sine = %f\n",j,sine);
-    finalpositive=finalpositive+sine;
+        valuepower=power(x,j);
+        printf("j= %f  Value power= %f\n",j,valuepower);
+        valuefact=fact(x,j);
+        printf("j= %f  Value fact= %f\n",j,valuefact);
+        sine=valuepower/valuefact;
+        printf("j= %f  Sine = %f\n",j,sine);
+        finalpositive=finalpositive+sine;
     }
     printf("FINAL POSITIVE = %f\n",finalpositive);
-
     for(k=3;k<=11;k=k+4)
     {
-    valuepower=power(x,k);
-    printf("k= %f  Value power= %f\n",k,valuepower);
-    valuefact=fact(x,k);
-    printf("k= %f  Value fact= %f\n",k,valuefact);
-    sine=valuepower/valuefact;
-    printf("k= %f  Sine = %f\n",k,sine);
-    finalnegative=-finalnegative-sine;
+        valuepower=power(x,k);
+        printf("k= %f  Value power= %f\n",k,valuepower);
+        valuefact=fact(x,k);
+        printf("k= %f  Value fact= %f\n",k,valuefact);
+        sine=valuepower/valuefact;
+        printf("k= %f  Sine = %f\n",k,sine);
+        finalnegative=-finalnegative-sine;
     }
     printf("FINAL NEGATIVE = %f\n",finalnegative);
     finalsine=finalpositive+finalnegative;
-    printf("\n\n sin x = %d  FP=%d   FN=%d",finalsine,finalpositive,finalnegative);
+    printf("\n\n sin x = %f  FP=%f   FN=%f",finalsine,finalpositive,finalnegative);
+
 }
+
 float power(float x,float j)
 {
     float i,answer=1;
     for(i=1;i<=j;i++)
-        answer=x*answer;
+    answer=x*answer;
     return (answer);
 }
+
 float fact(float x,float j)
 {
     float answer1=1,i;
@@ -48,3 +50,28 @@ float fact(float x,float j)
     answer1=answer1*i;
     return (answer1);
 }
+
+OUTPUT:x = 2
+j= 1.000000  Value power= 2.000000
+j= 1.000000  Value fact= 1.000000
+j= 1.000000  Sine = 2.000000
+j= 5.000000  Value power= 32.000000
+j= 5.000000  Value fact= 120.000000
+j= 5.000000  Sine = 0.266667
+j= 9.000000  Value power= 512.000000
+j= 9.000000  Value fact= 362880.000000
+j= 9.000000  Sine = 0.001411
+FINAL POSITIVE = 2.268078
+k= 3.000000  Value power= 8.000000
+k= 3.000000  Value fact= 6.000000
+k= 3.000000  Sine = 1.333333
+k= 7.000000  Value power= 128.000000
+k= 7.000000  Value fact= 5040.000000
+k= 7.000000  Sine = 0.025397
+k= 11.000000  Value power= 2048.000000
+k= 11.000000  Value fact= 39916800.000000
+k= 11.000000  Sine = 0.000051
+FINAL NEGATIVE = -1.307988
+
+
+ sin x = 0.960090  FP=2.268078   FN=-1.307988
