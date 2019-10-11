@@ -1,0 +1,50 @@
+#include<stdio.h>
+#include<conio.h>
+float main()
+{
+    float power(float,float);
+    float fact(float,float);
+    float x,j,k,valuepower,valuefact;
+    float sine,finalpositive=0,finalnegative=0,finalsine;
+    printf("x = ");
+    scanf("%f",&x);
+    for(j=1;j<=11;j=j+4)
+    {
+    valuepower=power(x,j);
+    printf("j= %f  Value power= %f\n",j,valuepower);
+    valuefact=fact(x,j);
+    printf("j= %f  Value fact= %f\n",j,valuefact);
+    sine=valuepower/valuefact;
+    printf("j= %f  Sine = %f\n",j,sine);
+    finalpositive=finalpositive+sine;
+    }
+    printf("FINAL POSITIVE = %f\n",finalpositive);
+
+    for(k=3;k<=11;k=k+4)
+    {
+    valuepower=power(x,k);
+    printf("k= %f  Value power= %f\n",k,valuepower);
+    valuefact=fact(x,k);
+    printf("k= %f  Value fact= %f\n",k,valuefact);
+    sine=valuepower/valuefact;
+    printf("k= %f  Sine = %f\n",k,sine);
+    finalnegative=-finalnegative-sine;
+    }
+    printf("FINAL NEGATIVE = %f\n",finalnegative);
+    finalsine=finalpositive+finalnegative;
+    printf("\n\n sin x = %d  FP=%d   FN=%d",finalsine,finalpositive,finalnegative);
+}
+float power(float x,float j)
+{
+    float i,answer=1;
+    for(i=1;i<=j;i++)
+        answer=x*answer;
+    return (answer);
+}
+float fact(float x,float j)
+{
+    float answer1=1,i;
+    for(i=1;i<=j;i++)
+    answer1=answer1*i;
+    return (answer1);
+}
