@@ -1,0 +1,22 @@
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+    int circular(int *,int *,int *);
+    int x=5,y=8,z=10;
+    printf("Before circular shift: x = %d  y = %d  z = %d\n",x,y,z);
+    circular(&x,&y,&z);
+    printf("After circular shift: x = %d  y = %d  z = %d",x,y,z);
+}
+int circular(int *a,int *b,int *c)
+{
+    int x=*a,y=*b,z=*c;
+    *a=z;
+    *b=x;
+    *c=y;
+}
+
+
+OUTPUT:
+Before circular shift: x = 5  y = 8  z = 10
+After circular shift: x = 10  y = 5  z = 8
