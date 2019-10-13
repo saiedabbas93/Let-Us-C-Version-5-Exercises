@@ -1,0 +1,87 @@
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+float distance(float,float,float,float,float,float,float,float);
+float area(float,float,float,float,float,float);
+float position(float,float,float,float);
+float main()
+{
+    float x,y,x1,y1,x2,y2,x3,y3,value;
+    printf("Enter the vertices of triangle A(x1,y1)\n");
+    scanf("%f%f",&x1,&y1);
+    printf("Enter the vertices of triangle B(x2,y2)\n");
+    scanf("%f%f",&x2,&y2);
+    printf("Enter the vertices of triangle C(x3,y3)\n");
+    scanf("%f%f",&x3,&y3);
+    printf("Enter vertices of point to finds its position P(x,y)\n");
+    scanf("%f%f",&x,&y);
+    value=distance(x,y,x1,y1,x2,y2,x3,y3);
+    if (value==1)
+    printf("Inside");
+    else if(value==0)
+    printf("Outside");
+    
+}
+float distance(float x,float y,float x1,float y1,float x2,float y2,float x3,float y3)
+{
+    float AB,BC,CA,PA,PB,PC,value;
+    AB= sqrt(pow((x2-x1),2) + pow((y2-y1),2));
+    BC= sqrt(pow((x3-x2),2) + pow((y3-y2),2));
+    CA= sqrt(pow((x3-x1),2) + pow((y3-y1),2));
+    PA= sqrt(pow((x-x1),2) + pow((y-y1),2));
+    PB= sqrt(pow((x-x2),2) + pow((y-y2),2));
+    PC= sqrt(pow((x-x3),2) + pow((y-y3),2));
+    value=area(AB,BC,CA,PA,PB,PC);
+}
+float area(float AB,float BC,float CA,float PA,float PB,float PC)
+{
+    float S,ABC,S1,PAB,S2,PBC,S3,PAC,value;
+    S=(AB+BC+CA)/2;
+    ABC= sqrt(S * (S-AB) * (S-BC) * (S-CA));
+
+    S1=(AB+PB+PC)/2;
+    PAB= sqrt(S1 * (S1-AB) * (S1-PB) * (S1-PC));
+
+    S2=(AB+PB+PC)/2;
+    PBC= sqrt(S2 * (S2-BC) * (S2-PB) * (S2-PC));
+
+    S3=(CA+PA+PC)/2;
+    PAC= sqrt(S3 * (S3-CA) * (S3-PA) * (S3-PC));
+    value=position(ABC,PAB,PBC,PAC);
+}
+float position(float ABC,float PAB,float PBC,float PAC)
+{
+    if ((PAB + PBC + PAC) == ABC)
+    return 1;
+    else
+    return 0;
+}
+
+OUTPUT:
+Enter the vertices of triangle A(x1,y1)
+1
+1
+Enter the vertices of triangle B(x2,y2)
+2
+2
+Enter the vertices of triangle C(x3,y3)
+3
+3
+Enter vertices of point to finds its position P(x,y)
+1
+56
+Outside
+PS G:\C new programs> cd "g:\C new programs\" ; if ($?) { gcc tempCodeRunnerFile.c -o tempCodeRunnerFile } ; if ($?) { .\tempCodeRunnerFile }
+Enter the vertices of triangle A(x1,y1)
+1
+1
+Enter the vertices of triangle B(x2,y2)
+2
+2
+Enter the vertices of triangle C(x3,y3)
+3
+3
+Enter vertices of point to finds its position P(x,y)
+10
+10
+Inside
