@@ -1,0 +1,36 @@
+#include<stdio.h>
+#include<conio.h>
+int gcd(int,int);
+int main()
+{
+    int j,k,GCD;
+    printf("j= ");
+    scanf("%d",&j);
+    printf("k= ");
+    scanf("%d",&k);
+    GCD=gcd(j,k);
+    printf("GCD= %d ",GCD);
+}
+int gcd(int j,int k)
+{
+    int a,num;
+    while(1)
+    {
+        a=k;
+        num=j/k;
+        printf("num= %d  ",num);
+        k=j-(num*k);
+        j=a;
+        printf("k= %d  j= %d  \n",k,j);
+        if (k==0)
+        return j;
+    }
+}
+OUTPUT:
+j= 1980
+k= 1617
+num= 1  k= 363  j= 1617
+num= 4  k= 165  j= 363
+num= 2  k= 33  j= 165
+num= 5  k= 0  j= 33
+GCD= 33
