@@ -1,0 +1,18 @@
+#include <conio.h>
+#include <stdio.h>
+void main()
+{
+    int a,b;
+    printf("Enter the 2 number\n");
+    scanf("%d%d",&a,&b);
+    if (a>b)
+    printf("%d is bigger",a);
+    else
+    printf("%d is bigger",b);
+}
+
+OUTPUT:
+Enter the 2 number
+1
+2
+2 is bigger
