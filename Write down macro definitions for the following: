@@ -1,0 +1,19 @@
+#define ABSOLUTE(x) {\
+                     if(x<0) \
+                     {\
+                     x=-x; \
+                     printf("%d",x); \
+                     } \
+                     else \
+                     printf("%d",x); \
+                     }
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+    int x=-100;
+    ABSOLUTE(x);
+}
+
+output:
+100
