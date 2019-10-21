@@ -1,0 +1,39 @@
+/*areaperi.h code is below*/
+#include<math.h>
+#define SQUARE(a) {\
+                    float area,perimeter; \
+                    area=a*a;\
+                    perimeter=4*a;\
+                    printf("Area of square= %f Perimeter of square= %f\n",area,perimeter);\
+                  }
+#define RECTANGLE(l,w) {\
+                        float area,perimeter; \
+                        area=w*l; \
+                        perimeter=2*(l+w); \
+                        printf("Area of rectangle= %f Perimeter of rectangle= %f\n",area,perimeter);\
+                        } 
+#define TRIANGLE(a,b,c) {\
+                         float area,perimeter; \
+                         perimeter=a+b+c; \
+                         printf("Perimeter of Triangle= %f  ",perimeter); \
+                         perimeter=perimeter/2; \
+                         area= sqrt(perimeter * (perimeter-a) * (perimeter-b) * (perimeter-c)); \
+                         printf("Area of Triangle= %f\n",area); \
+                         }
+/*Main program*/                         
+  
+#include <areaperi.h> 
+#include<conio.h>
+#include<stdio.h>
+void main()
+{
+    float a=5,b=5,c=5;
+    SQUARE(a);
+    TRIANGLE(a,b,c);
+    RECTANGLE(a,b);
+}
+
+OUTPUT:
+Area of square= 25.000000 Perimeter of square= 20.000000
+Perimeter of Triangle= 15.000000  Area of Triangle= 10.825317
+Area of rectangle= 25.000000 Perimeter of rectangle= 20.000000
