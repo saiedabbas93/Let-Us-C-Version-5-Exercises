@@ -1,0 +1,22 @@
+#define LETTER(x) {\
+                   if ((x>=65) && (x<=90)) \
+                   { \
+                       x=x+32; \
+                       printf("%c",x);\
+                   }\
+                   else if ((x>=97) && (x<=122)) \
+                   { \
+                       x=x-32; \
+                       printf("%c",x);\
+                   }\
+                   }
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+    unsigned char a='a';
+    LETTER(a);
+}
+
+OUTPUT:
+A
