@@ -1,0 +1,27 @@
+#define SMALL(x) ((x>=97) && (x<=122))
+#define LARGE(x) ((x>=65) && (x<=90))
+#define LESSTHANSIGN(x) (246)
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+    unsigned char x;
+    printf("Enter the letter: ");
+    scanf("%c",&x);
+
+    if SMALL(x)
+    printf("Small");
+    else if  LARGE(x)
+    printf("Large");
+    else if LESSTHANSIGN(x)
+    printf("Divide by sign ÷");
+}
+OUTPUT:
+Enter the letter: h
+Small
+PS C:\Program code> cd "c:\Program code\" ; if ($?) { gcc tempCodeRunnerFile.c -o tempCodeRunnerFile } ; if ($?) { .\tempCodeRunnerFile }
+Enter the letter: H
+Large
+PS C:\Program code> cd "c:\Program code\" ; if ($?) { gcc tempCodeRunnerFile.c -o tempCodeRunnerFile } ; if ($?) { .\tempCodeRunnerFile }
+Enter the letter: ÷
+Divide by sign ÷
