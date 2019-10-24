@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include<conio.h>
+int display(int *);
+int show(int **);
+int main()
+{
+    
+    int i,marks[]={55,45,98,76};
+    for(i=0;i<4;i++)
+    {
+    display(&marks[i]);
+    }
+}
+int display(int *j)
+{
+    show(&j);
+}
+int show(int **k)
+{
+    printf("%u ",**k);
+}
+Output:
+55 45 98 76
