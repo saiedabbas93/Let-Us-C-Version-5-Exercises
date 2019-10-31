@@ -1,0 +1,29 @@
+#include<conio.h>
+#include<stdio.h>
+int main()
+{
+    int arr[25]={55,35,65,0,7,34,233,4,56,7,43,545,65,65,2,3,454,67,1187,45,35,9,-76,65,1000},temp,i,j;
+    printf("Before Selection sort\n");
+    for(i=0;i<25;i++)
+    printf("%d  ",arr[i]);
+    for(j=0;j<25;j++)
+    {
+    for(i=j+1;i<25;i++)
+    {
+    if(arr[j]>arr[i])
+    {
+        temp=arr[j];
+        arr[j]=arr[i];
+        arr[i]=temp;
+    }
+    }
+    }
+     printf("\nAfter selection sort\n");
+    for(i=0;i<25;i++)
+    printf("%d  ",arr[i]);
+}
+Output:
+Before Selection sort
+55  35  65  0  7  34  233  4  56  7  43  545  65  65  2  3  454  67  1187  45  35  9  -76  65  1000
+After selection sort
+-76  0  2  3  4  7  7  9  34  35  35  43  45  55  56  65  65  65  65  67  233  454  545  1000  1187
