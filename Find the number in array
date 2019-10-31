@@ -1,0 +1,47 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+    int num_search(int *,int,int);
+    int size,search;
+    printf("Enter the size of the array: ");
+    scanf("%d",&size);
+    int num[size],i;
+    printf("Enter the %d numbers that will be stored in array\n");
+    for(i=0;i<size;i++)
+    {
+        scanf("%d",&num[i]);
+    }
+    printf("num[%d]= {",size);
+    for(i=0;i<size;i++)
+    {
+        printf("%d,",num[i]);
+    }
+    printf("}");
+    printf("\nEnter the number you want to search in array\n");
+    scanf("%d",&search);
+    num_search(&num[0],size,search);
+}
+int num_search(int *num,int size,int search)
+{
+    int i,b=0;
+    for(i=0;i<size;i++)
+    {
+        if(*(num+i)==search)
+        b=b+1;
+    }
+    printf("The number of times %d is present in array is %d",search,b);
+
+}
+Output:
+Enter the size of the array: 5
+Enter the 5 numbers that will be stored in array
+45
+65
+45
+45
+6
+num[5]= {45,65,45,45,6,}
+Enter the number you want to search in array
+45
+The number of times 45 is present in array is 3
