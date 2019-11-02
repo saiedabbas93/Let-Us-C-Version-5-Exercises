@@ -1,0 +1,63 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+    int i,j,square,value,k,remain,size;
+    printf("Enter the numbers upto which prime numbers are to be displayed: ");
+    scanf("%d",&size);
+    int num[size];
+    for(i=0;i<size;i++)
+    num[i]=i+1;
+    for(i=1;i<size;i++)
+    {
+        for(j=num[i],square=2,value=1;j<size;j++,square++)
+        {
+            value=square*num[i];
+            for(k=1;k<value;k++)
+            {
+                remain=num[k]/value;
+                if(remain==1)
+                {
+                    num[k]=0;
+                    break;
+                }
+            }
+            if(value>size)
+            break;
+        }
+        
+    }
+    for(i=1;i<size;i++)
+    {
+        if (num[i]!=0)
+        printf("%d\n",num[i]);
+    }
+}
+
+OUTPUT:
+Enter the numbers upto which prime numbers are to be displayed: 100
+2
+3
+5
+7
+11
+13
+17
+19
+23
+29
+31
+37
+41
+43
+47
+53
+59
+61
+67
+71
+73
+79
+83
+89
+97
