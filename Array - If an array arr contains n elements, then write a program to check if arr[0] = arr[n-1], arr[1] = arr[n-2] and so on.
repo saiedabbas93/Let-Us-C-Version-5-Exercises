@@ -1,0 +1,32 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+    int n,a,b;
+    printf("Enter the value of n: ");
+    scanf("%d",&n);
+    int arr[n],i;
+    for(i=0;i<n;i++)
+    scanf("%d",&arr[i]);
+
+    for(i=0;i<n;i++)
+    {
+    b=i+1;
+    a=n-b;
+    if(arr[i]==arr[a])
+    printf("arr[%d] = arr[%d - %d] ",i,n,b);
+    }
+}
+
+OUTPUT:
+Enter the value of n: 6
+22
+32
+42
+52
+32
+22
+arr[0] = arr[6 - 1]
+arr[1] = arr[6 - 2]
+arr[4] = arr[6 - 5]
+arr[5] = arr[6 - 6]
