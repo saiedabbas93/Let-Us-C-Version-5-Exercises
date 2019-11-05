@@ -1,0 +1,22 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+    int modify(int *);
+    int a[10]={1,2,3,4,5,6,7,8,9,10},i,c;
+    modify(&a[0]);
+    for(i=0;i<10;i++)
+    printf("%d ",a[i]);
+
+}
+int modify(int *a)
+{
+    int i;
+    for(i=0;i<10;i++)
+    {
+        *(a+i)=3 * *(a+i);
+    }
+ }
+ 
+ OUTPUT:
+ 3 6 9 12 15 18 21 24 27 30
