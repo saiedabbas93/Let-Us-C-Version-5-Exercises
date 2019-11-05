@@ -1,0 +1,19 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+    int a[5]={55,36,12,45,1},i,j,temp;
+    for(i=0,j=1;i<5;i++,j++)
+    {
+        if(a[0]>a[j])
+        {
+            temp=*a;
+            *a=*(a+j);
+            *(a+j)=temp;
+        }
+
+    }
+    printf("Smallest number is %d",*a);
+}
+Output:
+Smallest number is 1
