@@ -1,0 +1,13 @@
+#include <stdio.h>
+#include <conio.h>
+void main()
+{
+    int a[5]={55,32,12,45,3},b[5],i,j;
+    for(i=0,j=4;i<5;i++,j--)
+    {
+        b[i]=a[j];
+        printf("%d ",b[i]);
+    }
+}
+OUTPUT:
+3 45 12 32 55
