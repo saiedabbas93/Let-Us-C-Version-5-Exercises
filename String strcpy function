@@ -1,0 +1,25 @@
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+char xstrcpy(char *,char *);
+void main()
+{
+    char source[10]="mama", target[10];
+    xstrcpy(source,target);
+    printf("%s",target);
+}
+
+char xstrcpy(char *source, char *target)
+{
+    char abbas[10],saied[10];
+    int i=0;
+    while(*(source+i) != '\0')
+    {
+        *(target+i) = *(source+i);
+        i++;
+    }
+    *(target+i) = '\0';
+}
+
+output:
+mama
