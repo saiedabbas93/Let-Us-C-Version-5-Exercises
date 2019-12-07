@@ -1,0 +1,27 @@
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+char xstrcat(char *,char *);
+void main()
+{
+    char a[15]="John",b[10]=" Walker";
+    xstrcat(a,b);
+    printf("%s",a);
+}
+char xstrcat(char *a,char *b)
+{
+    int i=0,j=0;
+    while(*(a+i) != '\0')
+    {
+        i++;
+    }
+    while(*(b+j) != '\0')
+    {
+        *(a+i)=*(b+j);
+        j++;
+        i++;
+    }
+}
+
+OUTPUT:
+ John Walker
