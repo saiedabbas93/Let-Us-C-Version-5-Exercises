@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+char xstrlen(char *);
+void main()
+{
+    char a[10]="abbasa";
+    int l1;
+    l1=xstrlen(a);
+    printf("%d",l1);
+}
+char xstrlen(char *a)
+{
+    int i=0;
+    while(*(a+i) != '\0')
+    {
+        i++;
+    }
+    return(i);
+}
+
+OUTPUT:
+6
