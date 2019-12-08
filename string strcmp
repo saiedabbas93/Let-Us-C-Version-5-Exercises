@@ -1,0 +1,25 @@
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+char xstrcmp(char *, char *);
+void main()
+{
+    char *user1="abbasaz",*user2="abbasaz";
+    int value=0;
+    value=xstrcmp(user1,user2);
+    printf("%d",value);
+
+}
+char xstrcmp(char *user1,char *user2)
+{
+    int i;
+    while( ( *(user1+i) || *(user2+i) ) != '\0' )
+    {
+        if(*(user1+i)!=*(user2+i))
+        {
+            return(*(user1+i) - *(user2+i));
+            break;
+        }
+        i++;
+    }
+}
