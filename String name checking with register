@@ -1,0 +1,48 @@
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+void main()
+{
+    char a[5][10]={
+                     "bob",
+                     "harry",
+                     "emily",
+                     "melissa",
+                     "peter",
+                   }, b[10];
+    printf("Enter your name: ");
+    scanf("%s",b);
+   int i,j,length=0,size=strlen(b);
+
+
+   for(i=0;i<5;i++)
+   {
+       length=0;
+       for(j=0;(*(*(a+i)+j) || *(b+j)) !='\0';j++ )
+       {
+               if(a[i][j] == *(b+j))
+               length++;
+               else if(a[i][j] != *(b+j))
+               {
+                   length=0;
+               break;
+               }
+       }
+    if(length==size)
+    {
+        printf("Welcome %s !You are autorized to enter ",b);
+        break;
+    }
+   }
+   
+   if(length!=size)
+        printf("%s, you are not registered with us. Please contact the admin ",b);
+}
+
+
+OUTPUT
+Enter your name: bob
+Welcome bob !You are autorized to enter
+
+Enter your name: emilly
+emilly, you are not registered with us. Please contact the admin
