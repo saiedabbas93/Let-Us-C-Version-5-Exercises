@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+char xstrlen(char *);
+void main()
+{
+    char a[10]="124";
+    int i,sum,n,len;
+    len=xstrlen(a);
+    for(i=0,sum=0,n=100;i<len;i++)
+    {
+        sum=sum+( (a[i] - 48 ) * n );
+        n=n/10;
+    }
+        printf("%d",sum); /*Converting string to an integer*/
+}
+char xstrlen(char *a)
+{
+    int i=0,len=0;
+    while(*(a+i)!='\0')
+    {
+        i++;
+        len++;
+    }
+    return(len);
+}
