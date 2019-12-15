@@ -1,0 +1,19 @@
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+void main()
+{
+    char a[]="welcome to the world of programs";
+    int i;
+    for(i=0;a[i] != '\0';i++)
+    {
+        if((a[i]>=97) && (a[i]<=122))
+        {
+            a[i] = a[i] - 32;
+        }
+    }
+    printf("%s",a);
+}
+
+OUTPUT:
+WELCOME TO THE WORLD OF PROGRAMS
