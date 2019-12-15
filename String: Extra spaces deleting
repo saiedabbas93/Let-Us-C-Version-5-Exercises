@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+void main()
+{
+    char a[]="Grim  return  to  the  planet  of  apes";
+    int i,j;
+    printf("Before deleting the extra spaces: %s",a);
+    while(a[i] != '\0')
+    {
+        if ((a[i]==32) && (a[i+1]==32))
+        {
+            j=i;
+            while(a[j]!='\0')
+            {
+                a[j]=a[j+1];
+                j++;
+            }
+        }
+        i++;
+    }
+    printf("\nAfter deleting the extra spaces:  %s",a);
+}
