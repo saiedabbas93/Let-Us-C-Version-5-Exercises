@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+void main()
+{
+    char a[]="Working with strings is fun";
+    int i,s,e;
+    printf("Enter the position number: ");
+    scanf("%d",&s);
+    printf("How many characters are to be extracted from that position? ");
+    scanf("%d",&e);
+    s=s-1;
+    e=e-1;
+    for(i=s;i<=s+e;i++)
+    {
+        printf("%c",a[i]);
+    }
+}
+
+Output:
+Enter the position number: 4
+How many characters are to be extracted from that position? 4
+king
