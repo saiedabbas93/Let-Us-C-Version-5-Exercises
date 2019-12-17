@@ -1,0 +1,47 @@
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+void main()
+{
+    char str[6][40] = {
+                     "We will teach you how to...",
+                     "Move a mountain",
+                     "Level a building",
+                     "Erase the past",
+                     "Make a million",
+                     "...all through C!"
+                   } ;
+    char str1[20],str2[20];
+    int i,j,count=0,value=0,k,l;
+    printf("Enter the string to be found: ");
+    scanf("%s",&str1);
+    printf("Type the word you want replace: ");
+    scanf("%s",&str2);
+    for(i=0;i<6;i++)
+    {
+        while( *(*(str+i)+j) != '\0')
+        {
+            if( (*(*(str+i)+j)==str1[0]) && (*(*(str+i)+j+1)==str1[1]) && (*(*(str+i)+j+2)==str1[2])  && (*(*(str+i)+j+3)==str1[3]) && (*(*(str+i)+j+4)==str1[4])  && (*(*(str+i)+j+5)==str1[5]) && (*(*(str+i)+j+6)==str1[6]) && (*(*(str+i)+j+7)==str1[7]))
+            {
+                for(k=j,l=0;str[i][k]!='\0';k++,l++)
+                {
+                    str[i][k]=str2[l];
+                }
+                
+                count=1;
+                break;
+            }
+            j++;
+        }
+        if(count==1)
+        break;
+        j=0;
+    }
+    printf("%s",str[1]);
+}
+
+
+OUTPUT:
+Enter the string to be found: mountain
+Type the word you want replace: car
+Move a car
