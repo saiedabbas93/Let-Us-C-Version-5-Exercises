@@ -1,0 +1,68 @@
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+#include<stdlib.h>
+void main()
+{
+    char *a[5],*temp,b[50],*memory,exit[10]="exit";
+    int i,j,k=0,len,r=0;
+    printf("Please enter 'exit' once completed\nEnter the names\n");
+    while(1)
+    {
+        scanf("%s",b);
+        len= strlen(b);
+        memory=malloc(len+1);
+        strcpy(memory,b);
+        a[k]=memory;
+
+
+        if(*b==*exit)
+        for(r=1; (b[r] !=0) && (exit[r] !=0) ; r++)
+        {
+            if(b[r]==exit[r])
+                continue;
+            else
+            break;
+        }
+    if( (b[r]==0) && (exit[r] ==0) )
+    goto abbas;
+    k++;
+    }
+
+abbas:
+{
+for(i=0;i<k-1;i++)
+    for(j=i+1;j<k-1;j++)
+        if(**(a+i) > **(a+j))
+        {
+            temp=a[i];
+            a[i]=a[j];
+            a[j]=temp;
+        }
+
+printf("\nAlphabetical order of the entered names are below\n");
+for(i=0;i<k;i++)
+printf("\n%s",a[i]);
+}
+
+}
+
+OUTPUT:
+Please enter 'exit' once completed
+Enter the names
+Peter
+John
+Ryan
+David
+Annie
+Zack
+exit
+
+Alphabetical order of the entered names are below
+
+Annie
+David
+John
+Peter
+Ryan
+Ryan
