@@ -1,0 +1,59 @@
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+char vamama(char **,char *);
+void main()
+{
+    char *a[]={"abbas ne bola ",
+              "saied ",
+              "paul ",
+              "walker "};
+    char b[100];
+   int i,j,k=0,sum=0,len=0,l;
+   for(i=0;i<4;i++)
+   {
+       for(j=0; *(*(a+i)+j) != '\0';j++)
+       {
+          len++;
+          if(*(*(a+i)+j)==32)
+          {
+            if(j>len)
+            {
+              k=j-(len-1);
+            }
+            
+            if(j<len)
+            {
+              k=(len-1)-j;
+            }
+            l=k;
+            printf("%d\n",k);
+              for(k=k;k<=l+len-2;k++)
+                 {
+                      sum=k+1;
+                      /*printf("i=%d,j=%d,k=%d,s=%d,len=%d ",i,j,k,sum,len);*/
+                      if(sum>(j-1))
+                          {
+                            sum=sum-j;
+                            b[sum]= *(*(a+i)+k);
+                            
+                            /*printf("i=%d,j=%d,k=%d,s=%d,len=%d",i,j,k,sum,len);*/
+                           }
+                      if(sum<=(j-1))
+                            b[sum]= *(*(a+i)+k);
+                   /*printf("%c ",b[sum]);*/
+                 }
+                 printf("%s i= %d, j= %d, k=%d len=%d sum=%d \n",b,i,j,k,len,sum);
+                 len=0;
+              }
+           
+        }
+
+
+    }
+    /*printf("%s",b);*/
+   
+}
+
+
+
