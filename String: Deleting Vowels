@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+void main()
+{
+    char sentance[1][40]={"WELCOME TO THE WORLD OF C PROGRAMMING"};
+    int vowels[10]={65,97,69,101,73,105,79,111,85,117};
+    int i,j,k;
+    for(i=0;i<1;i++)
+    {
+        for(j=0; *(*(sentance+i)+j) != '\0';j++)
+        {
+            for(k=0;k<10;k++)
+            {
+                if(vowels[k]== *(*(sentance+i)+j))
+                {
+                    *(*(sentance+i)+j)=63;
+                    break;
+                }
+            }
+            printf("%c",*(*(sentance+i)+j));
+        }
+    }
+}
+OUTPUT:
+W?LC?M? T? TH? W?RLD ?F C PR?GR?MM?NG
