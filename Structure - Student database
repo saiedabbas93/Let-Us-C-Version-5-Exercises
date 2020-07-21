@@ -1,0 +1,34 @@
+#include<stdio.h>
+#include<conio.h>
+struct student_database
+{
+    int roll_number;
+    char name[25];
+    char dep[25];
+    char course[25];
+    int yearofjoin;
+};
+int total_students;
+struct student_database display(struct student_database *,int);
+void main()
+{
+    printf("Enter the total number of students: ");
+    scanf("%d",&total_students);
+    struct student_database data[3];
+    int i,year;
+    printf("Enter the following in order\nRoll number\nName\nDepartnment name\nCourse name\nYear of joining\n");
+    for(i=1;i<=total_students;i++)
+    scanf("%d%s%s%s%d",&data[i].roll_number,&data[i].name,&data[i].dep,&data[i].course,&data[i].yearofjoin);
+    printf("Enter the year you want to list the names: ");
+    scanf("%d",&year);
+    display(&data[0],year);
+}
+struct student_database display(struct student_database *data1,int year)
+{
+    int i;
+    for(i=0;i<=total_students;i++)
+    {
+        if(data1[i].yearofjoin==year)
+        printf("%s",data1[i].name);
+    }
+}
