@@ -1,34 +1,56 @@
 #include<stdio.h>
 #include<conio.h>
-struct student_database
+struct student
 {
-    int roll_number;
-    char name[25];
-    char dep[25];
-    char course[25];
-    int yearofjoin;
+  int roll;
+  char name[25];
+  char dep[25];
+  char course[25];
+  int year;
 };
-int total_students;
-struct student_database display(struct student_database *,int);
+struct student data[3];
+struct student displaybyyear(int,int);
+struct student displaybyrollnumber(int,int);
 void main()
 {
-    printf("Enter the total number of students: ");
-    scanf("%d",&total_students);
-    struct student_database data[3];
-    int i,year;
-    printf("Enter the following in order\nRoll number\nName\nDepartnment name\nCourse name\nYear of joining\n");
-    for(i=1;i<=total_students;i++)
-    scanf("%d%s%s%s%d",&data[i].roll_number,&data[i].name,&data[i].dep,&data[i].course,&data[i].yearofjoin);
-    printf("Enter the year you want to list the names: ");
-    scanf("%d",&year);
-    display(&data[0],year);
+  int count,i,year,rollnum;
+  printf("Welcome to St.Bede's school\nEnter not more than 3 students\n");
+  scanf("%d",&count);
+  while(count>3)
+  {
+    printf("Sorry! Only 3 students data can be entered.\nPlease enter the students count again: ");
+    scanf("%d",&count);
+  }
+  
+  for(i=0;i<count;i++)
+  {
+    printf("Perfect! Now enter the following details of student %d\nRoll number\nName\nDepartment\nCourse\nYear\n",i+1);
+    scanf("%d%s%s%s%d",&data[i].roll,&data[i].name,&data[i].dep,&data[i].course,&data[i].year);
+  }
+  printf("Enter the year to know the student's name who got enrolled: ");
+  scanf("%d",&year);
+  displaybyyear(count,year);
+  printf("Enter the roll number to know the student's name: ");
+  scanf("%d",&rollnum);
+  displaybyrollnumber(count,rollnum);
+
 }
-struct student_database display(struct student_database *data1,int year)
+struct student displaybyyear(int count,int year1)
 {
-    int i;
-    for(i=0;i<=total_students;i++)
-    {
-        if(data1[i].yearofjoin==year)
-        printf("%s",data1[i].name);
-    }
+  int i=0;
+  for(i=0;i<count;i++)
+  {
+    if(data[i].year==year1)
+    printf("%s ",&data[i].name);
+  }
+
+}
+struct student displaybyrollnumber(int count,int rollnum)
+{
+   int i=0;
+  for(i=0;i<count;i++)
+  {
+    if(data[i].roll==rollnum)
+    printf("%s ",&data[i].name);
+  }
 }
