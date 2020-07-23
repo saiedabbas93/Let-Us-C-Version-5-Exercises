@@ -1,0 +1,75 @@
+#include<stdio.h>
+#include<conio.h>
+struct test
+    {
+        char company[25];
+        char serial[10];
+        int year;
+        int quan;
+    };
+struct test car[5]={"Honda","AA0",2019,10,"Toyota","BB1",2018,15,"Audi","CC2",2020,19,"BMW","DD3",2018,5,"Tesla","EE4",2025,100};
+struct test display_range(int,int);
+
+void main()
+{
+    int i,j,k,count1,count2;
+    char from[4],to[4];
+    printf("Enter the from and to range of serial numbers between AA0 to EE4: ");
+    scanf("%s%s",from,to);
+/* From code*/
+    for(j=0,count1=0;j<5;j++)
+    {
+    for(i=0;(from[i]!='\0' && *(car[j].serial+i)!='\0');i++)
+    {
+        if(from[i]==*(car[j].serial+i) )
+        continue;
+        else
+        break;
+    }
+    if(from[i]=='\0' && *(car[j].serial+i)=='\0')
+    {
+        printf("%s",car[j].serial);
+        count1++;
+        break;
+    }
+    else if(j==4 && count1==0)
+    {
+         j=100;
+         break;
+    }
+    }
+/* To code*/
+    for(k=j,count2=0;k<5;k++)
+    {
+    for(i=0;(to[i]!='\0' && *(car[k].serial+i)!='\0');i++)
+    {
+        if(to[i]==*(car[k].serial+i) )
+        continue;
+        else
+        break;
+    }
+    if(to[i]=='\0' && *(car[k].serial+i)=='\0')
+    {
+        printf("\n%s",car[k].serial);
+        count2++;
+        break;
+    }
+     else if(k==4 && count2==0)
+    k=100;
+    }
+/* Print from to to range*/
+    printf("\n%d %d\n",j,k);
+    if(j!=100 && k!=100)
+    display_range(j,k);
+    else if(j!=100 && k==100)
+    printf("Please enter the correct serial number like AA0, BB1, CC2, DD3, EE4.\nRun the program again");
+
+}
+struct test display_range(int j,int k)
+{
+    int i;
+    for(i=j;i<=k;i++)
+    {
+        printf("%s %s %d %d\n",car[i].company,car[i].serial,car[i].year,car[i].quan);
+    }
+}
