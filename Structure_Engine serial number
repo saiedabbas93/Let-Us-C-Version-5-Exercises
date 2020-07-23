@@ -28,14 +28,13 @@ void main()
     }
     if(from[i]=='\0' && *(car[j].serial+i)=='\0')
     {
-        printf("%s",car[j].serial);
+        /*printf("%s",car[j].serial);*/
         count1++;
         break;
     }
     else if(j==4 && count1==0)
     {
-         j=100;
-         break;
+         goto ABBAS;
     }
     }
 /* To code*/
@@ -55,14 +54,14 @@ void main()
         break;
     }
      else if(k==4 && count2==0)
-    k=100;
+    goto ABBAS;
     }
 /* Print from to to range*/
     printf("\n%d %d\n",j,k);
     if(j!=100 && k!=100)
     display_range(j,k);
-    else if(j!=100 && k==100)
-    printf("Please enter the correct serial number like AA0, BB1, CC2, DD3, EE4.\nRun the program again");
+    ABBAS:
+    printf("Case sensitive! Please enter the correct serial number like AA0, BB1, CC2, DD3, EE4.\nRun the program again");
 
 }
 struct test display_range(int j,int k)
