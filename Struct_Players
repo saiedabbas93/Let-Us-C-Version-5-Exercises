@@ -1,0 +1,44 @@
+#include<stdio.h>
+#include<conio.h>
+struct cricket
+{
+    char name[20];
+    int age;
+    int matches;
+    float average;
+};
+struct cricket player[3]={"Sachin",50,1045,96.84,"Dhoni",39,850,65.32,"Kholi",30,540,77.12};
+struct cricket temp1;
+void main()
+{
+    int a[5]={45,32,89,16,44};
+    int i,j,temp;
+    for(i=0;i<5;i++)
+    for(j=i+1;j<5;j++)
+    {
+        if(a[i]>a[j])
+        {
+            temp=a[i];
+            a[i]=a[j];
+            a[j]=temp;
+        }
+    }
+    printf("Array sorting example\n");
+    for(i=0;i<5;i++)
+    printf("%d ",a[i]);
+
+    for(i=0;i<3;i++)
+    for(j=i+1;j<3;j++)
+    {
+        if(player[i].average>player[j].average)
+        {
+            temp1=player[i];
+            player[i]=player[j];
+            player[j]=temp1;
+        }
+    }
+    printf("\nList of players in ascending order by average runs\n");
+
+    for(i=0;i<3;i++)
+    printf("%s %d %d %f\n",player[i].name,player[i].age,player[i].matches,player[i].average);
+}
