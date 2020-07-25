@@ -1,0 +1,37 @@
+#include<stdio.h>
+#include<conio.h>
+int display(int *);
+struct employ
+{
+    char name[25];
+    int code;
+    int joindate[3];
+};
+struct employ details[4]={{"abbas",78458,15,8,2013},
+                          {"rama",98756,17,12,2018},
+                          {"haridas",659480,3,5,2016},
+                          {"ganesh",65489,25,7,2017}
+                         };
+void main()
+{
+    int date[3],i;
+    printf("Enter today's date: ");
+    for(i=0;i<3;i++)
+    scanf("%d",&date[i]);
+    display(date);
+}
+int display(int *date)
+{
+    int i;
+    printf("Employees with 3 and more than 3 years of experience are listed below\n\n");
+    for(i=0;i<4;i++)
+    if(details[i].joindate[2]<=*(date+2)-3)
+    {
+        
+        if(details[i].joindate[1]<=*(date+1) || details[i].joindate[1]>=*(date+1))
+        {
+            if(details[i].joindate[0]<=*(date+0))
+             printf("\tName: %s;Employee Code: %d;Date of join: %d/%d/%d\n",details[i].name,details[i].code,details[i].joindate[0],details[i].joindate[1],details[i].joindate[2]);
+        }
+    }
+}
