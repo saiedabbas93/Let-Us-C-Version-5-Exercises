@@ -1,0 +1,169 @@
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+int switchcase(int);
+struct library
+{
+    int access;
+    char title[40];
+    char author[40];
+    float price;
+    int issue;
+};
+struct library details[10]={{544,"How to become millionaire","abbas",55.5,1},
+                             {789,"Let us c","abbas",15.2,0},
+                             {454,"The intelligent investor","Benjamin",20.3,1}
+                           };
+int addinfo();
+struct library display();
+struct library authorname();
+struct library title();
+int bookcount();
+struct library sort();
+
+void main()
+{
+    int option;
+    printf("\tWelcome to Mcordrum Library!\n");
+    while(1)
+    {
+        printf("\nThe menu is\n1. Add book information\n2. Display book information\n");
+        printf("3. List all books of given author\n4. List the title of specified book\n");
+        printf("5. List the count of books in library\n6. List the books in the order of accession number\n");
+        printf("7. Exit\nYour choice is: ");
+        scanf("%d",&option);
+        if(option==7)
+        break;
+        switchcase(option);
+    }
+}
+int switchcase(int option)
+{
+    int count;
+    switch(option)
+    {
+        case 1:
+        printf("\tAdding the book information\n");
+        addinfo();
+        break;
+
+        case 2:
+        printf("\n\t Displaying the book's information\n\n");
+        display();
+        break;
+        
+        case 3:
+        printf("Listing all books of given author\nType the author name: ");
+        authorname();
+        break;
+
+        case 4:
+        printf("Listing title of specified book\nEnter the access code: ");
+        title();
+        break;
+
+        case 5:
+        printf("There are %d books in the library\n",count=bookcount());
+        break;
+
+        case 6:
+        printf("Listing the books in the accession number\n");
+        sort();
+        break;
+    }
+
+}
+int addinfo()
+{
+    int i,j;
+    printf("Enter the following\n");
+    for(i=3;i<10;i++)
+    {
+        printf("Access number: ");
+        scanf("%d",&details[i].access);
+        printf("Author name: ");
+        scanf("%s",&details[i].author);
+        printf("Book title: ");
+        scanf("%s",&details[i].title);
+        printf("Price of the book: ");
+        scanf("%f",&details[i].price);
+        printf("0 for issued and 1 for not: ");
+        scanf("%d",&details[i].issue);
+        printf("Enter 10 to stop and any other number to continue: ");
+        scanf("%d",&j);
+        if(j==10)
+        break;
+    }
+}
+struct library display()
+{
+    int i;
+    for(i=0;i<10;i++)
+    {
+        printf("Detail of book %d\n",i+1);
+        printf("Access number: %d\nBook title: %s\n",details[i].access,details[i].title);
+        printf("Author name: %s\nPrice: %f\n",details[i].author,details[i].price);
+        printf("Issue Flag: %d\n\n",details[i].issue);
+        if(details[i+1].access==0)
+        break;
+    }
+}
+struct library authorname()
+{
+    char name[40];
+    int i,j;
+    scanf("%s",name);
+    for(i=0;i<10;i++)
+    {
+    j=strcmp(name,details[i].author);
+    if(j==0)
+    {
+    printf("\n\n\tDetail of book %d\n",i+1);
+    printf("Access number: %d\nBook title: %s\n",details[0].access,details[i].title);
+    printf("Author name: %s\nPrice: %f\n",details[0].author,details[i].price);
+    printf("Issue Flag: %d\n\n",details[i].issue);
+    }
+    }
+    if(i==10)
+    printf("No matches found\n");
+}
+struct library title()
+{
+    int access,i;
+    printf("Enter the access code: ");
+    scanf("%d",&access);
+    for(i=0;i<10;i++)
+    {
+        if(access==details[i].access)
+        printf("Book title: %s\n",details[i].title);
+    }
+}
+int bookcount()
+{
+    int i,count=0;
+    for(i=0;i<10;i++)
+    {
+        if(details[i].access!=0)
+        count++;
+    }
+    return(count);
+    
+}
+struct library sort()
+{
+    int i,j,count=bookcount();
+    struct library temp;
+    for(i=0;i<count;i++)
+    {
+        for(j=i+1;j<count;j++)
+        {
+        if(details[i].access>details[j].access)
+        {
+            temp=details[i];
+            details[i]=details[j];
+            details[j]=temp;
+        }
+        }
+    }
+    display();
+}
