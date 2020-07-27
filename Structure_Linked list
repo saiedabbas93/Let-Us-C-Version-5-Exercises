@@ -1,0 +1,31 @@
+#include<stdio.h>
+#include<conio.h>
+struct node
+{
+	int value;
+	struct node *next;
+};
+typedef struct node mama;
+mama display(mama *);
+void main()
+{
+	mama a,b,c,*head;
+	a.value=55;
+	b.value=45;
+	c.value=100;
+	head=&a;
+	a.next=&b;
+	b.next=&c;
+	c.next=NULL;
+	display(head);
+}
+mama display(mama *head1)
+{
+	mama *temp;
+	temp=head1;
+	while(temp!=NULL)
+	{
+	printf("%d\n",temp->value);
+	temp=temp->next;
+	}
+}
