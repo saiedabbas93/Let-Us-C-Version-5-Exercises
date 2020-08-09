@@ -1,0 +1,50 @@
+#include<conio.h>
+#include<stdio.h>
+int a[5]={45,32,12,45};
+int push(int);
+int pop();
+void main()
+{
+    int i;
+    #ifdef mama
+    a[0]=55;
+    #endif
+    push(30);
+    pop();
+    push(59);
+    pop();
+    for(i=0;i<5;i++)
+    printf("%d ",a[i]);
+}
+int push(int val)
+{
+    int i;
+    for(i=0;i<5;i++)
+    {
+        if(a[i]==0)
+        break;
+        else
+        continue;
+    }
+    if(i==5)
+    printf("%d cannot be added as the stack is full\n",val);
+    else
+    a[i]=val;
+}
+int pop()
+{
+    int i;
+    for(i=0;i<=5;i++)
+    {
+        if (a[i]==0 && i==0)
+        {
+        printf("Stack is empty, nothing to remove!\n");
+        break;
+        }
+        else if(a[i]==0)
+        {
+         a[i-1]=0;
+         break;   
+        }
+    }
+}
