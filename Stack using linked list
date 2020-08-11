@@ -1,0 +1,85 @@
+#include<stdio.h>
+#include<conio.h>
+struct node
+{
+    int value;
+    struct node *next;
+};
+struct node a0,a1,a2,a3,a4,*head;
+void display(struct node *);
+void push(int);
+void pop();
+void main()
+{
+    a0.value=0;
+    a1.value=0;a2.value=0;a3.value=0;a4.value=0;
+    head=&a0;
+    a0.next=&a1;
+    a1.next=&a2;
+    a2.next=&a3;
+    a3.next=&a4;
+    a4.next=NULL;
+    pop();
+    pop();
+    pop();
+    pop();
+    pop();
+    display(head);
+   
+}
+void display(struct node *head)
+{
+    struct node *temp;
+    temp=head;
+    while(temp!=NULL)
+    {
+        printf("%d ",temp->value);
+        temp=temp->next;
+
+    }
+}
+void push(int value)
+{
+    struct node *temp;
+    temp=head;
+    int i;
+    for(i=0;i<5;i++)
+    {
+        if(temp->value==0)
+        {
+            temp->value=value;
+            printf("%d is added to the stack\n",temp->value);  
+            break;
+        }
+        temp=temp->next;
+    }
+    if(i==5)
+    printf("%d cannot be added to stack as it is full!\n",value);
+}
+void pop()
+{
+    struct node *temp;
+    temp=head;
+    int i;
+    for(i=0;i<=3;i++)
+    {
+        if(i==0 && temp->value==0)
+        {
+            printf("Stack is empty\n");
+            break;
+        }
+        if((temp->value!=0) && (temp->next->value==0))
+        {
+             printf("%d is popped out of the stack\n",temp->value);    
+             temp->value=0;
+             break;
+        }
+        temp=temp->next;
+    }
+    if(i==4)
+    {
+        printf("%d is popped out of the stack\n",temp->value);    
+        temp->value=0;
+    }
+
+}
