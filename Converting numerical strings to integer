@@ -14,6 +14,10 @@ int getint()
     int b=0,size=0,count=1,i;
     printf("Enter only numbers: ");
     scanf("%s",a);//Scans a string of numerical characters from keyboard
+    #ifdef alternate
+    sscanf(a,"%d",&b);
+    #endif
+    #ifndef alternate
     while(a[size]!='\0')//Counts the size of the string
     {
         size++;
@@ -23,5 +27,6 @@ int getint()
         b=((a[i]-48)*count)+b;
         count=count*10;
     }
+    #endif
     return b;
 }
