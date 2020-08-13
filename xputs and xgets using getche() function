@@ -1,0 +1,33 @@
+#include<stdio.h>
+#include<conio.h>
+void xgets(char *);
+void xputs(char *);
+void main()
+{
+    char a[100];
+    xgets(a);
+    xputs(a);
+}
+void xgets(char *a)
+{
+    #ifdef alternate
+    scanf("%[^\n]s",a);
+    #endif
+    int i=0;
+    while(1)
+    {
+        *(a+i)=getche();
+        if(*(a+i)==13)//13 is ASCII value for Enter key.
+        {
+            *(a+i)='\0'; //So if Enter key is pressed which says i am done typing, the last character is assigned NULL character '\0'
+            printf("\n");//If new line is not printed, then the xputs string will be printed on the same line as the echoed string.
+            break;
+        }
+        i++;
+    }
+     
+}
+void xputs(char *a)
+{
+    printf("%s",a);
+}
