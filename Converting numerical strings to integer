@@ -1,0 +1,27 @@
+#include<stdio.h>
+#include<conio.h>
+#include<ctype.h>
+int getint();
+void main()
+{
+    int a ;
+    a=getint();
+    printf("you entered %d",a);
+}
+int getint()
+{
+    char a[50];
+    int b=0,size=0,count=1,i;
+    printf("Enter only numbers: ");
+    scanf("%s",a);//Scans a string of numerical characters from keyboard
+    while(a[size]!='\0')//Counts the size of the string
+    {
+        size++;
+    }
+    for(i=size-1;i>=0;i--)//Converts the string to integers
+    {
+        b=((a[i]-48)*count)+b;
+        count=count*10;
+    }
+    return b;
+}
