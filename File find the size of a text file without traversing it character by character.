@@ -1,0 +1,23 @@
+//Write a C program to find the size of a text file without traversing it character by character.
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+    FILE *fp;
+    char ch[1000],d[1000];
+    int count=0,total_count=0;
+    fp=fopen("source.txt","r");
+    if(fp==NULL)
+    printf("No file found!");
+    else
+    {
+        while(fgets(ch,999,fp)!=NULL)
+        {
+        count=printf("%s",ch);
+        total_count+=count-1;//As the '\n' is also counted as a character, we are subtracting one character.
+        printf(" %d",total_count);
+        }
+        fclose(fp);
+        printf("Total count= %d",total_count+1);//When we come to the last line there is no '\n' in the end, but in the previous comment we removed it, so adding again.
+    }
+}
