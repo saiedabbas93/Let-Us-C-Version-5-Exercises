@@ -1,0 +1,61 @@
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+#define read
+void main()
+{
+    FILE *fp;
+    #ifdef read //Read
+    fp=fopen("source.txt","r");
+    #endif
+    #ifdef write //Write
+    fp=fopen("source.txt","wb");
+    #endif
+    #ifdef read //Read
+    char ch;
+    #endif
+    #ifdef write //Write
+    char ch[100];
+    #endif
+    int i=1,test=1;
+    if(fp==NULL)
+    printf("No file found!");
+    else
+    {
+        #ifdef read //Read
+        printf("Line %d ",i);
+        while(1)
+        {
+            if(ch=='\n')
+            printf("Line %d ",++i);
+            ch=fgetc(fp);
+            if(ch==EOF)
+            break;
+            /*else if(ch=='\n')
+            {
+            i++;
+            printf("\\n%d",i);
+            }
+           else if(ch=='\r')
+            {
+                i++;
+            printf("\\r%d",i);
+            }*/
+            printf("%c",ch);
+        }
+        #endif
+        #ifdef write //Write
+        while((strnlen(gets(ch),1000))>0)
+        {
+            fputs(ch,fp);
+            fputs("\n",fp);
+            
+        }
+        printf("Test=%d",test);
+        #endif
+        fclose(fp);
+        #ifdef read //Read
+        printf("\nNo of characters: %d",i);
+        #endif
+    }
+}
