@@ -1,0 +1,24 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+    FILE *source,*destination;
+    char ch;
+    source=fopen("source.txt","r");
+    if(source==NULL)
+    printf("Source file cannot be found!");
+    else
+    {
+        destination=fopen("destination.txt","a");
+        fputs("\n***Copying text from source***\n",destination);
+        while((ch=fgetc(source))!=EOF)
+        {
+             if(ch>=97 && ch<=122)
+             ch=ch-32;
+             fputc(ch,destination);
+        }
+        fclose(source);
+        fclose(destination);
+        printf("Sucess");
+    }
+}
