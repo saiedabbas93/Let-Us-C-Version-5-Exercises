@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+    FILE *source,*destination,*new;
+    source=fopen("source.txt","r");
+    destination=fopen("destination.txt","r");
+    new=fopen("new.txt","w");
+    char chs[100],chd[100],*value;
+    int i=0;
+    while(1)
+    {
+        if( (value=fgets(chs,199,source))!=NULL)
+        {
+            fputs(chs,new);
+        }
+        if(fgets(chd,199,destination)!=NULL)
+        {
+            fputs(chd,new);
+        }
+        else if((fgets(chd,199,destination)==NULL) && (fgets(chs,199,source)==NULL) )
+        {
+            break;
+        }
+    }
+}
