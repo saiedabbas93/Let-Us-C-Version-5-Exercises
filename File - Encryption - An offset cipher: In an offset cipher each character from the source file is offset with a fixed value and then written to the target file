@@ -1,0 +1,22 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+  FILE *source,*encrypt;
+  char ch;
+  source=fopen("source.txt","r");
+  if(source==NULL)
+  printf("No file found!");
+  else
+  {
+    encrypt=fopen("encrypt.txt","w");
+    while( (ch=fgetc(source))!=EOF )
+    {
+      ch+=128;
+      fputc(ch,encrypt);
+    }
+    fclose(source);
+    fclose(encrypt);
+    printf("Source file is encryped and save in file named encrypt.txt");
+  }
+}
