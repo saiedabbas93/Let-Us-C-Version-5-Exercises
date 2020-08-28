@@ -1,0 +1,35 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+  FILE *fp;
+  char ch,a[1000];
+  int i=0;
+  fp=fopen("source.txt","rb");
+  if(fp==NULL)
+  printf("No file found!");
+  else
+  {
+    while(1)
+    {
+      ch=fgetc(fp);
+      if( (ch!=' ') || (ch!='.') || (ch!='\n') || (ch!='\r') || (ch!=EOF))
+      {
+        a[i]=ch;
+        i++;
+      }
+      if( (ch==' ') || (ch=='.')  || (ch=='\n') || (ch=='\r')  || (ch==EOF))
+      {
+        for(i=i-1;i>=0;i--)
+        printf("%c",a[i]);
+        i=0;
+      }
+      if(ch==EOF)
+      break;
+      }
+    }
+}
+
+Example:
+Input: David.
+Output: .divaD
