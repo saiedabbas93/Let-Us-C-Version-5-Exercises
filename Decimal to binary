@@ -1,0 +1,29 @@
+#include<stdio.h>
+#include<conio.h>
+#define TRUE 1
+int showbits(int);
+void main()
+{
+	int a,bits;
+	printf("Enter the decimal number: ");
+	scanf("%d",&a);
+	bits=showbits(a);
+	printf("Binary of %d is %d",a,bits);
+}
+int showbits(int num)
+{
+	int i=1,remainder=0,value,divide=num;
+	while(TRUE)
+	{
+		remainder=((divide%2)*i)+remainder;
+		divide=divide/2;
+		if(divide==1)
+		{
+		i*=10;
+		break;
+		}
+		i*=10;
+	}
+	remainder=(i*1)+remainder;
+	return(remainder);
+}
