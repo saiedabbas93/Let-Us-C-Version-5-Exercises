@@ -1,0 +1,27 @@
+#include<stdio.h>
+#include<conio.h>
+int *showbits(int);
+void main()
+{
+	int a=1000510,*bits,i,j;
+    bits=showbits(a);
+	for(j=0;a!=1;j++)
+	a=a/2;
+	
+	for(i=j;i>=0;i--)
+	printf("%d",*(bits+i));
+}
+
+int *showbits(int num)
+{
+	int remainder[1000],i,j;
+	int *value;
+	for(i=0;num!=1;i++)
+	{
+		remainder[i]=num%2;
+		num=num/2;
+	}
+	remainder[i]=1;
+	value=remainder;
+	return (value);
+}
