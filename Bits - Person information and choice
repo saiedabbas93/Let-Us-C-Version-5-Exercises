@@ -2,10 +2,14 @@
 #include<conio.h>
 void main()
 {
-	int value=1,choice,andmask,i,answer;
-	printf("Type 0 for Upper class, 1 for Middle class, 2 for Lower class: ");
+	int value[10],choice,andmask,i,answer,count;
+    for(count=0;count<10;count++)
+    {
+    value[count]=1;
+    printf("\t\tEnter person %d information\n",count+1);
+    printf("Type 0 for Upper class, 1 for Middle class, 2 for Lower class: ");
 	scanf("%d",&choice);
-	value=value<<choice;
+	value[count]=value[count]<<choice;
 
 	printf("Type 3 for English language, 4 for Hindi language, 5 for Regional language:");
 	scanf("%d",&choice);
@@ -13,17 +17,17 @@ void main()
 	{
 		case 3:
 		choice=8;
-		value=value|choice;
+		value[count]=value[count]|choice;
 		break;
 
 		case 4:
 		choice=16;
-		value=value|choice;
+		value[count]=value[count]|choice;
 		break;
 
 		case 5:
 		choice=32;
-		value=value|choice;
+		value[count]=value[count]|choice;
 		break;
 
 		default:
@@ -36,27 +40,32 @@ void main()
 	{
 		case 6:
 		choice=64;
-		value=value|choice;
+		value[count]=value[count]|choice;
 		break;
 
 		case 7:
 		choice=128;
-		value=value|choice;
+		value[count]=value[count]|choice;
 		break;
 
 		case 8:
 		choice=256;
-		value=value|choice;
+		value[count]=value[count]|choice;
 		break;
 
 		default:
 		break;
 	}
+    }
+    
+    for(count=0;count<10;count++)
+    {
+    printf("\nPerson %d has chosen\n",count+1);
 
 	for(i=0;i<=8;i++)
 	{
 		andmask=1<<i;
-		answer=value&andmask;
+		answer=value[count]&andmask;
 		if(answer>0)
 		{
 			switch (i)
@@ -102,6 +111,5 @@ void main()
 			}
 		}
 	}
-
-
+    }
 }
