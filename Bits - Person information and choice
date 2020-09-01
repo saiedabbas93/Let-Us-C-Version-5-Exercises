@@ -1,0 +1,107 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+	int value=1,choice,andmask,i,answer;
+	printf("Type 0 for Upper class, 1 for Middle class, 2 for Lower class: ");
+	scanf("%d",&choice);
+	value=value<<choice;
+
+	printf("Type 3 for English language, 4 for Hindi language, 5 for Regional language:");
+	scanf("%d",&choice);
+	switch (choice)
+	{
+		case 3:
+		choice=8;
+		value=value|choice;
+		break;
+
+		case 4:
+		choice=16;
+		value=value|choice;
+		break;
+
+		case 5:
+		choice=32;
+		value=value|choice;
+		break;
+
+		default:
+		break;
+	}
+
+	printf("Type 6 for Daily, 7 for Supplement, 8 for Tabloid: ");
+	scanf("%d",&choice);
+	switch (choice)
+	{
+		case 6:
+		choice=64;
+		value=value|choice;
+		break;
+
+		case 7:
+		choice=128;
+		value=value|choice;
+		break;
+
+		case 8:
+		choice=256;
+		value=value|choice;
+		break;
+
+		default:
+		break;
+	}
+
+	for(i=0;i<=8;i++)
+	{
+		andmask=1<<i;
+		answer=value&andmask;
+		if(answer>0)
+		{
+			switch (i)
+			{
+				case 0:
+				printf("Upper class\n");
+				break;
+
+				case 1:
+				printf("Middle class\n");
+				break;
+
+				case 2:
+				printf("Lower class\n");
+				break;
+
+				case 3:
+				printf("English\n");
+				break;
+
+				case 4:
+				printf("Hindi\n");
+				break;
+
+				case 5:
+				printf("Regional\n");
+				break;
+
+				case 6:
+				printf("Daily\n");
+				break;
+
+				case 7:
+				printf("Supplement\n");
+				break;
+
+				case 8:
+				printf("Tabloid\n");
+				break;
+
+				default:
+				break;
+			}
+		}
+	}
+
+
+}
