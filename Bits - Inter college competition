@@ -1,0 +1,183 @@
+#include<stdio.h>
+#include<conio.h>
+#define FLUSH fflush(stdin)
+#define ANDMASK(x) (andmask=1<<x)
+int getinfo();
+void switchfun(int,int);
+void display_results(int);
+struct detail
+{
+    char college_name[50];
+    int game;
+};
+struct detail group[10];
+void main()
+{
+    int i;
+    printf("\n\t\tWelcome to the data entry page. Based on your entry your college can win champion of champion title.\n\t\tLets get started!\n");
+    printf("\nIf you won any of these games, enter the code next to next\n0 Cricket\n1 Basketball\n2 Football\n3 Hockey");
+    printf("\n4 Lawn tennis\n5 Table tennis\n6 Carom\n7 Chess\n8 Rugby\n");
+    i=getinfo();
+    display_results(i);
+}
+int getinfo()
+{
+    int i=0,code;
+    char another='y',next;
+    while(another=='y' || another=='Y')
+    {
+        FLUSH;
+        printf("Enter college name: ");
+        scanf("%s",&group[i].college_name);
+        next='y';
+        group[1].game=0;
+        while(next=='y' || next=='Y')
+        {
+            printf("Refer to the code above and enter the codes of the game you won\n");
+            scanf("%d",&code);
+            FLUSH;
+            //group[i].game=0;
+            switchfun(code,i);
+            printf("\nDid you win any other game? Press y for yes: ");
+            scanf("%c",&next);
+        }
+         i++;
+        FLUSH;
+        printf("\nAnother college entry?Press y for yes: ");
+        scanf("%c",&another);
+
+    }
+    return(i);
+
+}
+void switchfun(int code,int i)
+{
+    int ormask;
+    switch (code)
+    {
+        case 0:
+        ormask=1;
+        group[i].game=group[i].game | ormask;
+        break;
+
+        case 1:
+        ormask=2;
+        group[i].game=group[i].game | ormask;
+        break;
+
+        case 2:
+        ormask=4;
+        group[i].game=group[i].game | ormask;
+        break;
+
+        case 3:
+        ormask=8;
+        group[i].game=group[i].game | ormask;
+        break;
+
+        case 4:
+        ormask=16;
+        group[i].game=group[i].game | ormask;
+        break;
+
+        case 5:
+        ormask=32;
+        group[i].game=group[i].game | ormask;
+        break;
+
+        case 6:
+        ormask=64;
+        group[i].game=group[i].game | ormask;
+        break;
+
+        case 7:
+        ormask=128;
+        group[i].game=group[i].game | ormask;
+        break;
+
+        case 8:
+        ormask=256;
+        group[i].game=group[i].game | ormask;
+        break;
+
+        default:
+        break;
+
+    }
+}
+
+void display_results(int i)
+{
+    int andmask,count,k,j,win=0;
+    printf("---------------------------------------------");
+    printf("\n\n\t\tRESULTS");
+    printf("---------------------------------------------");
+    for(j=0;j<i;j++)
+    {
+        printf("\n%s college has won the following games:\n",group[j].college_name);
+        
+        for(count=0;count<=8;count++)
+    {
+        ANDMASK(count);
+        k=group[j].game & andmask;
+        if(k>0)
+        {
+            switch(count)
+            {
+                case 0:
+                printf("Cricket\n");
+                win++;
+                break;
+
+                case 1:
+                printf("Basketball\n");
+                win++;
+                break;
+
+                case 2:
+                printf("Football\n");
+                win++;
+                break;
+
+                case 3:
+                printf("Hockey\n");
+                win++;
+                break;
+
+                case 4:
+                printf("Lawn Tennis\n");
+                win++;
+                break;
+
+                case 5:
+                printf("Table tennis\n");
+                win++;
+                break;
+
+                case 6:
+                printf("Carom\n");
+                win++;
+                break;
+
+                case 7:
+                printf("Chess\n");
+                win++;
+                break;
+
+                case 8:
+                printf("Rugby\n");
+                win++;
+                break;
+
+                default:
+                break;
+
+            }
+        }
+
+    }
+    if(win>=5)
+    printf("%s is the Champion of Champions\n",group[j].college_name);
+    printf("---------------------------------------------");
+    }
+}
